@@ -1,0 +1,7 @@
+.idea/
+.venv/
+jwst_data/
+*.fits
+*.csv
+*.jpg
+__pycache__/
