@@ -13,13 +13,13 @@ class DataVisualizer:
         plt.show()
 
     def plot_lightcurves(self, target_name, df: pd.DataFrame):
+        gas_columns = df.drop(columns=['MJD-AVG'])
+        for gas in gas_columns:
 
-        for gas in df.columns:
-
-            plt.plot(df.index, df[gas], label=gas)
+            plt.plot(df['MJD-AVG'], df[gas], label=gas)
 
         plt.title(f"{target_name} - lightcurves analysis")
-        plt.xlabel("Time")
+        plt.xlabel("MJD time")
         plt.ylabel("Normalized flux")
         plt.legend()
         plt.grid()

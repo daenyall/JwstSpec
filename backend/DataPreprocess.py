@@ -3,9 +3,10 @@ import numpy as np
 class DataPreprocessor():
 
     def preprocess(self, raw_df: pd.DataFrame) -> pd.DataFrame:
-        df = raw_df[['WAVELENGTH', 'FLUX']].copy()
+        df = raw_df[['WAVELENGTH', 'FLUX', 'MJD-AVG']].copy()
         df['FLUX_NORMALIZED'] = df['FLUX'] / df['FLUX'].median()
         return df
+  
 
     def extract_lightcurve(self, raw_table, target_wave: float):
        waves = np.array(raw_table['WAVELENGTH'][0])
@@ -13,6 +14,7 @@ class DataPreprocessor():
             difference = np.absolute(waves - target_wave)
             index = difference.argmin()
             flux_matrix = np.vstack(raw_table['FLUX'])
+            
             wave_flux = flux_matrix[:, index]
             wave_flux = wave_flux.astype(float)
             normalized_wave_flux = wave_flux / np.nanmedian(wave_flux)
@@ -27,6 +29,7 @@ class DataPreprocessor():
             extracted_curve = self.extract_lightcurve(raw_table, wave)
             if(extracted_curve is not None):
                 results[gas_name] = extracted_curve
+        results['MJD-AVG'] = raw_table['MJD-AVG']
         df_results = pd.DataFrame(results)
         return df_results
 

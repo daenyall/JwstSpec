@@ -11,7 +11,7 @@ def main():
     preprocessor = DataPreprocessor()
     visualizer = DataVisualizer()
 
-
+   
     fits_data = fetcher.get_data(target_name)
     preprocessed_data = preprocessor.extract_all_gases(fits_data, gases)
     visualizer.plot_lightcurves(target_name, preprocessed_data)
