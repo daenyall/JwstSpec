@@ -3,7 +3,7 @@ import numpy as np
 class DataPreprocessor():
 
     def preprocess(self, raw_df: pd.DataFrame) -> pd.DataFrame:
-        df = raw_df[['WAVELENGTH', 'FLUX', 'MJD-AVG']].copy()
+        df = raw_df[['WAVELENGTH', 'FLUX', 'MJD-AVG', 'TDB-MID']].copy()
         df['FLUX_NORMALIZED'] = df['FLUX'] / df['FLUX'].median()
         return df
   
@@ -30,6 +30,8 @@ class DataPreprocessor():
             if(extracted_curve is not None):
                 results[gas_name] = extracted_curve
         results['MJD-AVG'] = raw_table['MJD-AVG']
+        results['TDB-MID'] = raw_table['TDB-MID']
+    
         df_results = pd.DataFrame(results)
         return df_results
 

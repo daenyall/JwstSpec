@@ -13,7 +13,7 @@ class DataVisualizer:
         plt.show()
 
     def plot_lightcurves(self, target_name, df: pd.DataFrame):
-        gas_columns = df.drop(columns=['MJD-AVG'])
+        gas_columns = df.drop(columns=['MJD-AVG', 'TDB-MID'])
         for gas in gas_columns:
 
             plt.plot(df['MJD-AVG'], df[gas], label=gas)

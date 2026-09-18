@@ -5,4 +5,4 @@ jwst_data/
 *.csv
 *.jpg
 __pycache__/
-.mastDownload/
+mastDownload/
