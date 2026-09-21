@@ -2,7 +2,7 @@ from fastapi import FastAPI
 from DataPreprocess import DataPreprocessor
 from DataAnalyzer import DataAnalyzer
 from DataFetch import MastApiFetcher
-
+from fastapi.middleware.cors import CORSMiddleware
 
 preprocessor = DataPreprocessor()
 analyzer = DataAnalyzer()
@@ -20,7 +20,7 @@ transit_start = midpoint - half_duration
 transit_end = midpoint + half_duration
 
 app = FastAPI(title="Spectrum API")
-
+app.add_middleware(CORSMiddleware,allow_origins=["http://localhost:3000"], allow_methods=["*"], allow_headers=["*"])
 @app.get("/")
 def health_check():
     return {"status": "API działa", "version": "1.0"}
