@@ -30,8 +30,10 @@ class MastApiFetcher(DataFetcher):
         object_data = Observations.query_object(target_name)
         return object_data
 
-    def _filter_mission(self, object_data       ):
-        filter_mission = object_data[object_data['obs_collection'] == 'JWST']
+    def _filter_mission(self, object_data):
+        filter_mission = object_data[
+            object_data["obs_collection"] == "JWST"
+        ]
         return filter_mission
 
     def _get_product_filename(self, object_data):
@@ -40,31 +42,111 @@ class MastApiFetcher(DataFetcher):
         return pd_product
 
     def _filter_object(self, filtered_df: pd.DataFrame):
-        filtered_df = filtered_df[filtered_df['productFilename'].str.endswith('x1dints.fits')]
+        filtered_df = filtered_df[
+            filtered_df["productFilename"].str.endswith(
+                "x1dints.fits"
+            )
+        ]
         return filtered_df
 
-    def _get_filtered_id(self, filtered_df: pd.DataFrame):
-        filtered_id = filtered_df['obsID'].iloc[0]
-        return filtered_id
-
     def _get_observation_file(self, obs_id):
-        get_observation_file = Observations.download_products(obs_id)
-        return get_observation_file
+        observation_file = Observations.download_products(obs_id)
+        return observation_file
+
+    def _get_segment_number(self, filename: str) -> int:
+        segment_part = filename.partition("-seg")[2]
+        segment_number = segment_part[:3]
+
+        return int(segment_number)
 
     def get_data(self, target_name: str) -> pd.DataFrame:
+
         step0 = self._search_object(target_name)
         step1 = self._filter_mission(step0)
         step2 = self._get_product_filename(step1)
         step3 = self._filter_object(step2)
-        step4 = self._get_filtered_id(step3)
-        step5 = self._get_observation_file(step4)
 
-        downloaded_files = step5['Local Path'].tolist()
-        local_path = next(route for route in downloaded_files if route.endswith('x1dints.fits'))
-        load_fits = Table.read(local_path, hdu='EXTRACT1D')
-        fits_data = load_fits.to_pandas()
+        segmented_files = step3[
+            step3["productFilename"].str.contains(
+                "-seg",
+                na=False
+            )
+        ].copy()
+
+        if segmented_files.empty:
+            raise ValueError(
+                f"No segmented x1dints files found for {target_name}"
+            )
+
+
+        first_filename = segmented_files.iloc[0][
+            "productFilename"
+        ]
+
+        exposure_prefix = first_filename.partition("-seg")[0]
+
+
+        exposure_files = segmented_files[
+            segmented_files["productFilename"].str.startswith(
+                exposure_prefix + "-seg"
+            )
+        ].copy()
+
+        exposure_files["segment_number"] = exposure_files[
+            "productFilename"
+        ].apply(self._get_segment_number)
+
+        exposure_files = exposure_files.sort_values(
+            "segment_number"
+        )
+
+        print(
+            exposure_files[
+                ["productFilename", "segment_number"]
+            ]
+        )
+
+        dataframes = []
+
+        for _, row in exposure_files.iterrows():
+
+            obs_id = row["obsID"]
+            product_filename = row["productFilename"]
+
+            manifest = self._get_observation_file(obs_id)
+
+            downloaded_files = manifest[
+                "Local Path"
+            ].tolist()
+
+            local_path = next(
+                path
+                for path in downloaded_files
+                if str(path).endswith(product_filename)
+            )
+
+            table = Table.read(
+                local_path,
+                hdu="EXTRACT1D"
+            )
+
+            segment_df = table.to_pandas()
+
+            dataframes.append(segment_df)
+
+        fits_data = pd.concat(
+            dataframes,
+            ignore_index=True
+        )
+
+        if "TDB-MID" in fits_data.columns:
+            fits_data = fits_data.sort_values(
+                "TDB-MID"
+            ).reset_index(drop=True)
+
+        print(
+            "Combined integrations:",
+            len(fits_data)
+        )
+
         return fits_data
-
-
-
-
