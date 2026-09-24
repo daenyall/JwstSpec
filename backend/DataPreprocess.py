@@ -51,3 +51,6 @@ class DataPreprocessor:
             bin_start = bin_end
 
         return bins
+
+
+        
