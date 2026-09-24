@@ -1,0 +1,677 @@
+{
+  "target": "WASP-96b",
+  "spectrum": [
+    {
+      "bin_start": 0.8469354472043885,
+      "bin_center": 0.8619354472043885,
+      "bin_end": 0.8769354472043885,
+      "channels": 35,
+      "in_transit_median": 0.9875742668987313,
+      "out_of_transit_median": 1.0003413190269135,
+      "depth": 0.012762695977210454,
+      "uncertainty": 0.0003624981623594342
+    },
+    {
+      "bin_start": 0.8769354472043885,
+      "bin_center": 0.8919354472043886,
+      "bin_end": 0.9069354472043886,
+      "channels": 33,
+      "in_transit_median": 0.9871427095419252,
+      "out_of_transit_median": 1.0003787673600555,
+      "depth": 0.013231046329641259,
+      "uncertainty": 0.00027186843983740964
+    },
+    {
+      "bin_start": 0.9069354472043886,
+      "bin_center": 0.9219354472043886,
+      "bin_end": 0.9369354472043886,
+      "channels": 34,
+      "in_transit_median": 0.9872123637004113,
+      "out_of_transit_median": 1.0003142769056885,
+      "depth": 0.0130977968702055,
+      "uncertainty": 0.0003000665441325191
+    },
+    {
+      "bin_start": 0.9369354472043886,
+      "bin_center": 0.9519354472043886,
+      "bin_end": 0.9669354472043886,
+      "channels": 33,
+      "in_transit_median": 0.9873086172621817,
+      "out_of_transit_median": 1.0003297011195298,
+      "depth": 0.013016792206384993,
+      "uncertainty": 0.0002668114580194233
+    },
+    {
+      "bin_start": 0.9669354472043886,
+      "bin_center": 0.9819354472043886,
+      "bin_end": 0.9969354472043886,
+      "channels": 32,
+      "in_transit_median": 0.9871557018312269,
+      "out_of_transit_median": 1.0002760891276976,
+      "depth": 0.013116765900015143,
+      "uncertainty": 0.00025175257985283924
+    },
+    {
+      "bin_start": 0.9969354472043886,
+      "bin_center": 1.0119354472043887,
+      "bin_end": 1.0269354472043886,
+      "channels": 33,
+      "in_transit_median": 0.9872001065313636,
+      "out_of_transit_median": 1.00027967299408,
+      "depth": 0.013075909483960655,
+      "uncertainty": 0.00026837622547680803
+    },
+    {
+      "bin_start": 1.0269354472043888,
+      "bin_center": 1.0419354472043887,
+      "bin_end": 1.0569354472043886,
+      "channels": 32,
+      "in_transit_median": 0.9871354336572136,
+      "out_of_transit_median": 1.000304176690406,
+      "depth": 0.013164738626566887,
+      "uncertainty": 0.0002918277068403808
+    },
+    {
+      "bin_start": 1.0569354472043886,
+      "bin_center": 1.0719354472043885,
+      "bin_end": 1.0869354472043884,
+      "channels": 32,
+      "in_transit_median": 0.9868901511284349,
+      "out_of_transit_median": 1.000265916249155,
+      "depth": 0.013372209232997876,
+      "uncertainty": 0.0003311033974517979
+    },
+    {
+      "bin_start": 1.0869354472043888,
+      "bin_center": 1.1019354472043887,
+      "bin_end": 1.1169354472043886,
+      "channels": 32,
+      "in_transit_median": 0.9870450769873086,
+      "out_of_transit_median": 1.0002877207726348,
+      "depth": 0.013238834697578274,
+      "uncertainty": 0.00026669114185318577
+    },
+    {
+      "bin_start": 1.1169354472043886,
+      "bin_center": 1.1319354472043885,
+      "bin_end": 1.1469354472043884,
+      "channels": 32,
+      "in_transit_median": 0.9869634993798491,
+      "out_of_transit_median": 1.0003537691665514,
+      "depth": 0.013385534397354728,
+      "uncertainty": 0.0002946140727432036
+    },
+    {
+      "bin_start": 1.146935447204389,
+      "bin_center": 1.1619354472043888,
+      "bin_end": 1.1769354472043887,
+      "channels": 32,
+      "in_transit_median": 0.9871009559612904,
+      "out_of_transit_median": 1.0002971083966508,
+      "depth": 0.013192232912191536,
+      "uncertainty": 0.00019111392194112733
+    },
+    {
+      "bin_start": 1.1769354472043887,
+      "bin_center": 1.1919354472043886,
+      "bin_end": 1.2069354472043885,
+      "channels": 31,
+      "in_transit_median": 0.9872498810480659,
+      "out_of_transit_median": 1.0002665285770684,
+      "depth": 0.013013179144881934,
+      "uncertainty": 0.00021802275042390504
+    },
+    {
+      "bin_start": 1.206935447204389,
+      "bin_center": 1.2219354472043888,
+      "bin_end": 1.2369354472043887,
+      "channels": 32,
+      "in_transit_median": 0.9872228446555876,
+      "out_of_transit_median": 1.0003367008885315,
+      "depth": 0.013109442272082758,
+      "uncertainty": 0.0002605802496351708
+    },
+    {
+      "bin_start": 1.2369354472043887,
+      "bin_center": 1.2519354472043887,
+      "bin_end": 1.2669354472043886,
+      "channels": 31,
+      "in_transit_median": 0.9869715618273711,
+      "out_of_transit_median": 1.0002307277003037,
+      "depth": 0.013256107321775299,
+      "uncertainty": 0.00033055432546635715
+    },
+    {
+      "bin_start": 1.266935447204389,
+      "bin_center": 1.281935447204389,
+      "bin_end": 1.2969354472043888,
+      "channels": 31,
+      "in_transit_median": 0.9871307822292106,
+      "out_of_transit_median": 1.0002999852417804,
+      "depth": 0.013165253630776324,
+      "uncertainty": 0.00016447001933254276
+    },
+    {
+      "bin_start": 1.2969354472043888,
+      "bin_center": 1.3119354472043887,
+      "bin_end": 1.3269354472043886,
+      "channels": 31,
+      "in_transit_median": 0.9870845840968191,
+      "out_of_transit_median": 1.0003048674698896,
+      "depth": 0.013216254167101121,
+      "uncertainty": 0.0001934168523310763
+    },
+    {
+      "bin_start": 1.326935447204389,
+      "bin_center": 1.341935447204389,
+      "bin_end": 1.3569354472043889,
+      "channels": 31,
+      "in_transit_median": 0.9868508621241399,
+      "out_of_transit_median": 1.0002714283328233,
+      "depth": 0.013416924475241551,
+      "uncertainty": 0.00019870167583010005
+    },
+    {
+      "bin_start": 1.3569354472043889,
+      "bin_center": 1.3719354472043888,
+      "bin_end": 1.3869354472043887,
+      "channels": 31,
+      "in_transit_median": 0.9867010649253793,
+      "out_of_transit_median": 1.0003846003146357,
+      "depth": 0.013678274720495197,
+      "uncertainty": 0.00023427914310635215
+    },
+    {
+      "bin_start": 1.386935447204389,
+      "bin_center": 1.401935447204389,
+      "bin_end": 1.416935447204389,
+      "channels": 31,
+      "in_transit_median": 0.986807267370996,
+      "out_of_transit_median": 1.0003075934583703,
+      "depth": 0.013496174752307449,
+      "uncertainty": 0.0002509381350436828
+    },
+    {
+      "bin_start": 1.416935447204389,
+      "bin_center": 1.4319354472043888,
+      "bin_end": 1.4469354472043887,
+      "channels": 31,
+      "in_transit_median": 0.9866261750715097,
+      "out_of_transit_median": 1.0003587664935163,
+      "depth": 0.013727666395269764,
+      "uncertainty": 0.00024336802901670293
+    },
+    {
+      "bin_start": 1.4469354472043892,
+      "bin_center": 1.461935447204389,
+      "bin_end": 1.476935447204389,
+      "channels": 31,
+      "in_transit_median": 0.9868352973042143,
+      "out_of_transit_median": 1.0003521468064882,
+      "depth": 0.01351209126248688,
+      "uncertainty": 0.0002420099937629444
+    },
+    {
+      "bin_start": 1.476935447204389,
+      "bin_center": 1.4919354472043889,
+      "bin_end": 1.5069354472043888,
+      "channels": 31,
+      "in_transit_median": 0.98709332399971,
+      "out_of_transit_median": 1.0003027542609724,
+      "depth": 0.013205432260377611,
+      "uncertainty": 0.00021649088778424538
+    },
+    {
+      "bin_start": 1.5069354472043892,
+      "bin_center": 1.5219354472043891,
+      "bin_end": 1.536935447204389,
+      "channels": 31,
+      "in_transit_median": 0.9869615948433323,
+      "out_of_transit_median": 1.0003058373852487,
+      "depth": 0.013340162621461411,
+      "uncertainty": 0.00026929329189384404
+    },
+    {
+      "bin_start": 1.536935447204389,
+      "bin_center": 1.551935447204389,
+      "bin_end": 1.5669354472043888,
+      "channels": 30,
+      "in_transit_median": 0.9871719073174894,
+      "out_of_transit_median": 1.0003588969279833,
+      "depth": 0.013182258538400602,
+      "uncertainty": 0.00021732787905267805
+    },
+    {
+      "bin_start": 1.5669354472043893,
+      "bin_center": 1.5819354472043892,
+      "bin_end": 1.596935447204389,
+      "channels": 31,
+      "in_transit_median": 0.9869982375113029,
+      "out_of_transit_median": 1.0003474711587663,
+      "depth": 0.013344596784955294,
+      "uncertainty": 0.0002080776007041252
+    },
+    {
+      "bin_start": 1.596935447204389,
+      "bin_center": 1.611935447204389,
+      "bin_end": 1.6269354472043889,
+      "channels": 31,
+      "in_transit_median": 0.9871244162591365,
+      "out_of_transit_median": 1.0003676728157425,
+      "depth": 0.013238389160787324,
+      "uncertainty": 0.00021931516528338584
+    },
+    {
+      "bin_start": 1.6269354472043893,
+      "bin_center": 1.6419354472043892,
+      "bin_end": 1.6569354472043891,
+      "channels": 31,
+      "in_transit_median": 0.9874926311854222,
+      "out_of_transit_median": 1.0003342840837153,
+      "depth": 0.012837361572642455,
+      "uncertainty": 0.00020758809167627836
+    },
+    {
+      "bin_start": 1.6569354472043891,
+      "bin_center": 1.671935447204389,
+      "bin_end": 1.686935447204389,
+      "channels": 30,
+      "in_transit_median": 0.9875985487549421,
+      "out_of_transit_median": 1.0004851915181008,
+      "depth": 0.012880393305576983,
+      "uncertainty": 0.00020182461025952043
+    },
+    {
+      "bin_start": 1.6869354472043894,
+      "bin_center": 1.7019354472043893,
+      "bin_end": 1.7169354472043892,
+      "channels": 31,
+      "in_transit_median": 0.9873475411093444,
+      "out_of_transit_median": 1.000423678572071,
+      "depth": 0.013070599729697032,
+      "uncertainty": 0.00020320547716216314
+    },
+    {
+      "bin_start": 1.7169354472043892,
+      "bin_center": 1.731935447204389,
+      "bin_end": 1.746935447204389,
+      "channels": 30,
+      "in_transit_median": 0.987274091438969,
+      "out_of_transit_median": 1.000481568710171,
+      "depth": 0.01320112002485868,
+      "uncertainty": 0.0001521072918901553
+    },
+    {
+      "bin_start": 1.7469354472043894,
+      "bin_center": 1.7619354472043893,
+      "bin_end": 1.7769354472043892,
+      "channels": 31,
+      "in_transit_median": 0.98747188355273,
+      "out_of_transit_median": 1.00049662896587,
+      "depth": 0.0130182801581278,
+      "uncertainty": 0.00018830623065063705
+    },
+    {
+      "bin_start": 1.7769354472043892,
+      "bin_center": 1.7919354472043891,
+      "bin_end": 1.806935447204389,
+      "channels": 31,
+      "in_transit_median": 0.9872481138852001,
+      "out_of_transit_median": 1.000405741687429,
+      "depth": 0.013152291369335203,
+      "uncertainty": 0.00020886692727511687
+    },
+    {
+      "bin_start": 1.8069354472043895,
+      "bin_center": 1.8219354472043894,
+      "bin_end": 1.8369354472043893,
+      "channels": 30,
+      "in_transit_median": 0.987097855769987,
+      "out_of_transit_median": 1.000481121942393,
+      "depth": 0.013376830285835856,
+      "uncertainty": 0.00020602533784199484
+    },
+    {
+      "bin_start": 1.8369354472043893,
+      "bin_center": 1.8519354472043892,
+      "bin_end": 1.866935447204389,
+      "channels": 31,
+      "in_transit_median": 0.9871714085898712,
+      "out_of_transit_median": 1.0005261026546983,
+      "depth": 0.013347671819248995,
+      "uncertainty": 0.00025303414960925003
+    },
+    {
+      "bin_start": 1.8669354472043895,
+      "bin_center": 1.8819354472043894,
+      "bin_end": 1.8969354472043893,
+      "channels": 30,
+      "in_transit_median": 0.9873829999773587,
+      "out_of_transit_median": 1.0005602609742748,
+      "depth": 0.013169882425757135,
+      "uncertainty": 0.00019343437800436344
+    },
+    {
+      "bin_start": 1.8969354472043893,
+      "bin_center": 1.9119354472043892,
+      "bin_end": 1.9269354472043891,
+      "channels": 31,
+      "in_transit_median": 0.9870085614714346,
+      "out_of_transit_median": 1.000583131264289,
+      "depth": 0.013566658650043653,
+      "uncertainty": 0.00024367681370686053
+    },
+    {
+      "bin_start": 1.9269354472043896,
+      "bin_center": 1.9419354472043895,
+      "bin_end": 1.9569354472043894,
+      "channels": 30,
+      "in_transit_median": 0.9871177350796183,
+      "out_of_transit_median": 1.000586477098435,
+      "depth": 0.013460847540008909,
+      "uncertainty": 0.00023319603903706936
+    },
+    {
+      "bin_start": 1.9569354472043894,
+      "bin_center": 1.9719354472043893,
+      "bin_end": 1.9869354472043892,
+      "channels": 31,
+      "in_transit_median": 0.9872752920881972,
+      "out_of_transit_median": 1.0005226315538804,
+      "depth": 0.013240419604611251,
+      "uncertainty": 0.0003392928228949693
+    },
+    {
+      "bin_start": 1.9869354472043896,
+      "bin_center": 2.0019354472043895,
+      "bin_end": 2.0169354472043897,
+      "channels": 30,
+      "in_transit_median": 0.9872237276874725,
+      "out_of_transit_median": 1.0006641549721227,
+      "depth": 0.013431506682703808,
+      "uncertainty": 0.00019623240796616287
+    },
+    {
+      "bin_start": 2.0169354472043888,
+      "bin_center": 2.031935447204389,
+      "bin_end": 2.046935447204389,
+      "channels": 31,
+      "in_transit_median": 0.9877316451268847,
+      "out_of_transit_median": 1.0006519967879126,
+      "depth": 0.01291193312210654,
+      "uncertainty": 0.00036062270319789814
+    },
+    {
+      "bin_start": 2.046935447204389,
+      "bin_center": 2.061935447204389,
+      "bin_end": 2.0769354472043893,
+      "channels": 30,
+      "in_transit_median": 0.9885545076798925,
+      "out_of_transit_median": 1.0007640686912307,
+      "depth": 0.012200239190547165,
+      "uncertainty": 0.00020434328017588082
+    },
+    {
+      "bin_start": 2.0769354472043884,
+      "bin_center": 2.0919354472043885,
+      "bin_end": 2.1069354472043886,
+      "channels": 31,
+      "in_transit_median": 0.9886917985549593,
+      "out_of_transit_median": 1.0008800886910558,
+      "depth": 0.012177572791997823,
+      "uncertainty": 0.0002865201289482976
+    },
+    {
+      "bin_start": 2.1069354472043886,
+      "bin_center": 2.1219354472043888,
+      "bin_end": 2.136935447204389,
+      "channels": 30,
+      "in_transit_median": 0.9886956590497503,
+      "out_of_transit_median": 1.0007461073713704,
+      "depth": 0.012041464096495568,
+      "uncertainty": 0.00020320386348440266
+    },
+    {
+      "bin_start": 2.136935447204388,
+      "bin_center": 2.151935447204388,
+      "bin_end": 2.1669354472043882,
+      "channels": 31,
+      "in_transit_median": 0.9881810579857344,
+      "out_of_transit_median": 1.0010227749251701,
+      "depth": 0.012828596172944878,
+      "uncertainty": 0.00019217561882735356
+    },
+    {
+      "bin_start": 2.1669354472043882,
+      "bin_center": 2.1819354472043884,
+      "bin_end": 2.1969354472043885,
+      "channels": 30,
+      "in_transit_median": 0.9883288282544043,
+      "out_of_transit_median": 1.0009153764013328,
+      "depth": 0.012575037254579778,
+      "uncertainty": 0.00027140375075080595
+    },
+    {
+      "bin_start": 2.1969354472043876,
+      "bin_center": 2.2119354472043877,
+      "bin_end": 2.226935447204388,
+      "channels": 30,
+      "in_transit_median": 0.9882624377852645,
+      "out_of_transit_median": 1.000946531551161,
+      "depth": 0.012672099224161409,
+      "uncertainty": 0.0003341741424969515
+    },
+    {
+      "bin_start": 2.226935447204388,
+      "bin_center": 2.241935447204388,
+      "bin_end": 2.256935447204388,
+      "channels": 31,
+      "in_transit_median": 0.9880719258425175,
+      "out_of_transit_median": 1.0008749291008874,
+      "depth": 0.012791811330383903,
+      "uncertainty": 0.0002848033119577788
+    },
+    {
+      "bin_start": 2.256935447204387,
+      "bin_center": 2.2719354472043873,
+      "bin_end": 2.2869354472043875,
+      "channels": 30,
+      "in_transit_median": 0.9879405138221791,
+      "out_of_transit_median": 1.0009878661345297,
+      "depth": 0.013034475994933922,
+      "uncertainty": 0.0002555386958529238
+    },
+    {
+      "bin_start": 2.2869354472043875,
+      "bin_center": 2.3019354472043876,
+      "bin_end": 2.3169354472043877,
+      "channels": 31,
+      "in_transit_median": 0.9879188891960113,
+      "out_of_transit_median": 1.0009877407148342,
+      "depth": 0.013055955619886036,
+      "uncertainty": 0.0003310520741743796
+    },
+    {
+      "bin_start": 2.316935447204387,
+      "bin_center": 2.331935447204387,
+      "bin_end": 2.346935447204387,
+      "channels": 30,
+      "in_transit_median": 0.9884556046796513,
+      "out_of_transit_median": 1.001059306608012,
+      "depth": 0.012590364871654863,
+      "uncertainty": 0.00023544514355686565
+    },
+    {
+      "bin_start": 2.346935447204387,
+      "bin_center": 2.361935447204387,
+      "bin_end": 2.3769354472043873,
+      "channels": 30,
+      "in_transit_median": 0.9879031683429065,
+      "out_of_transit_median": 1.0011663640943707,
+      "depth": 0.013247744058462971,
+      "uncertainty": 0.00032346763711054815
+    },
+    {
+      "bin_start": 2.3769354472043864,
+      "bin_center": 2.3919354472043866,
+      "bin_end": 2.4069354472043867,
+      "channels": 31,
+      "in_transit_median": 0.9884661500026722,
+      "out_of_transit_median": 1.00106866303617,
+      "depth": 0.01258905957087426,
+      "uncertainty": 0.00035158056339748046
+    },
+    {
+      "bin_start": 2.4069354472043867,
+      "bin_center": 2.421935447204387,
+      "bin_end": 2.436935447204387,
+      "channels": 30,
+      "in_transit_median": 0.987293816795141,
+      "out_of_transit_median": 1.001287183200735,
+      "depth": 0.01397537753440779,
+      "uncertainty": 0.0004522507124490725
+    },
+    {
+      "bin_start": 2.436935447204386,
+      "bin_center": 2.451935447204386,
+      "bin_end": 2.4669354472043863,
+      "channels": 30,
+      "in_transit_median": 0.9877723918744368,
+      "out_of_transit_median": 1.001195155182654,
+      "depth": 0.013406740173216608,
+      "uncertainty": 0.0004488928487684406
+    },
+    {
+      "bin_start": 2.4669354472043863,
+      "bin_center": 2.4819354472043864,
+      "bin_end": 2.4969354472043865,
+      "channels": 30,
+      "in_transit_median": 0.9868997243142976,
+      "out_of_transit_median": 1.0011432541554854,
+      "depth": 0.01422726446197048,
+      "uncertainty": 0.0006063191299087033
+    },
+    {
+      "bin_start": 2.4969354472043856,
+      "bin_center": 2.5119354472043858,
+      "bin_end": 2.526935447204386,
+      "channels": 31,
+      "in_transit_median": 0.9869488030344262,
+      "out_of_transit_median": 1.0012523475705235,
+      "depth": 0.014285653932102071,
+      "uncertainty": 0.0005234422755913643
+    },
+    {
+      "bin_start": 2.526935447204386,
+      "bin_center": 2.541935447204386,
+      "bin_end": 2.556935447204386,
+      "channels": 30,
+      "in_transit_median": 0.9880935212361268,
+      "out_of_transit_median": 1.0013572613145931,
+      "depth": 0.013245762117961302,
+      "uncertainty": 0.0004974298883692421
+    },
+    {
+      "bin_start": 2.5569354472043853,
+      "bin_center": 2.5719354472043854,
+      "bin_end": 2.5869354472043855,
+      "channels": 30,
+      "in_transit_median": 0.988319332709855,
+      "out_of_transit_median": 1.0017890841507229,
+      "depth": 0.01344569595933165,
+      "uncertainty": 0.000439453188314924
+    },
+    {
+      "bin_start": 2.5869354472043855,
+      "bin_center": 2.6019354472043856,
+      "bin_end": 2.6169354472043858,
+      "channels": 31,
+      "in_transit_median": 0.9863367953451083,
+      "out_of_transit_median": 1.0014368192251017,
+      "depth": 0.015078359003893649,
+      "uncertainty": 0.0004664222066306096
+    },
+    {
+      "bin_start": 2.616935447204385,
+      "bin_center": 2.631935447204385,
+      "bin_end": 2.646935447204385,
+      "channels": 30,
+      "in_transit_median": 0.9882794159052681,
+      "out_of_transit_median": 1.0016208121922912,
+      "depth": 0.013319807380821218,
+      "uncertainty": 0.0004906848404428858
+    },
+    {
+      "bin_start": 2.646935447204385,
+      "bin_center": 2.6619354472043852,
+      "bin_end": 2.6769354472043854,
+      "channels": 30,
+      "in_transit_median": 0.988598446721104,
+      "out_of_transit_median": 1.0016858776082131,
+      "depth": 0.013065404214701357,
+      "uncertainty": 0.00047941086747686567
+    },
+    {
+      "bin_start": 2.6769354472043845,
+      "bin_center": 2.6919354472043846,
+      "bin_end": 2.7069354472043847,
+      "channels": 30,
+      "in_transit_median": 0.9854306986708781,
+      "out_of_transit_median": 1.0020718815923078,
+      "depth": 0.016606775648655654,
+      "uncertainty": 0.000691467590622506
+    },
+    {
+      "bin_start": 2.7069354472043847,
+      "bin_center": 2.721935447204385,
+      "bin_end": 2.736935447204385,
+      "channels": 31,
+      "in_transit_median": 0.9863368833481387,
+      "out_of_transit_median": 1.0021239664980597,
+      "depth": 0.015753622982483086,
+      "uncertainty": 0.00046821082769360505
+    },
+    {
+      "bin_start": 2.736935447204384,
+      "bin_center": 2.751935447204384,
+      "bin_end": 2.7669354472043843,
+      "channels": 30,
+      "in_transit_median": 0.992777186814034,
+      "out_of_transit_median": 1.0027216283418432,
+      "depth": 0.009917449915041569,
+      "uncertainty": 0.0008471905936779612
+    },
+    {
+      "bin_start": 2.7669354472043843,
+      "bin_center": 2.7819354472043845,
+      "bin_end": 2.7969354472043846,
+      "channels": 30,
+      "in_transit_median": 0.9871112764447452,
+      "out_of_transit_median": 1.0023148784854072,
+      "depth": 0.01516848883220825,
+      "uncertainty": 0.0006813148254151116
+    },
+    {
+      "bin_start": 2.7969354472043837,
+      "bin_center": 2.811935447204384,
+      "bin_end": 2.826935447204384,
+      "channels": 31,
+      "in_transit_median": 0.9866752363570239,
+      "out_of_transit_median": 1.0023237334093267,
+      "depth": 0.015612218418769357,
+      "uncertainty": 0.0004430569979323526
+    }
+  ],
+  "transit": {
+    "midpoint": 59751.32467285991,
+    "start": 59751.27412285991,
+    "end": 59751.37522285991,
+    "duration_hours": 2.4264
+  },
+  "analysis": {
+    "bin_width": 0.03,
+    "ephemeris_reference": "<a refstr=KOKORI_ET_AL__2023 href=https://ui.adsabs.harvard.edu/abs/2023ApJS..265....4K/abstract target=ref>Kokori et al. 2023</a>",
+    "ephemeris_time_system": "BJD-TDB",
+    "duration_source": "PSCompPars fallback"
+  }
+}
