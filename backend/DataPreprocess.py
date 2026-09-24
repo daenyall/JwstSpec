@@ -1,38 +1,53 @@
-import pandas as pd
 import numpy as np
-class DataPreprocessor():
 
-    def preprocess(self, raw_df: pd.DataFrame) -> pd.DataFrame:
-        df = raw_df[['WAVELENGTH', 'FLUX', 'MJD-AVG', 'TDB-MID']].copy()
-        df['FLUX_NORMALIZED'] = df['FLUX'] / df['FLUX'].median()
-        return df
-  
+class DataPreprocessor:
 
-    def extract_lightcurve(self, raw_table, target_wave: float):
-       waves = np.array(raw_table['WAVELENGTH'][0])
-       if(target_wave >= min(waves) and target_wave <= max(waves)):
-            difference = np.absolute(waves - target_wave)
-            index = difference.argmin()
-            flux_matrix = np.vstack(raw_table['FLUX'])
-            
-            wave_flux = flux_matrix[:, index]
-            wave_flux = wave_flux.astype(float)
-            normalized_wave_flux = wave_flux / np.nanmedian(wave_flux)
-            return normalized_wave_flux
-       else:
-           print(f"Warning: wave {target_wave} out of the instrument's range")
-           return None
+    def extract_binned_lightcurve(self, raw_table, bin_center: float, bin_width: float = 0.03):
+        waves = np.array(raw_table["WAVELENGTH"][0], dtype=float)
 
-    def extract_all_gases(self, raw_table, gases_dict):
-        results = {}
-        for gas_name, wave in gases_dict.items():
-            extracted_curve = self.extract_lightcurve(raw_table, wave)
-            if(extracted_curve is not None):
-                results[gas_name] = extracted_curve
-        results['MJD-AVG'] = raw_table['MJD-AVG']
-        results['TDB-MID'] = raw_table['TDB-MID']
-    
-        df_results = pd.DataFrame(results)
-        return df_results
+        half_width = bin_width / 2
+        bin_start = bin_center - half_width
+        bin_end = bin_center + half_width
 
+        wavelength_mask = (waves >= bin_start) & (waves < bin_end)
+        channels_in_bin = np.count_nonzero(wavelength_mask)
 
+        if not wavelength_mask.any():
+            return None
+
+        flux_matrix = np.vstack(raw_table["FLUX"]).astype(float)
+        flux_in_bin = flux_matrix[:, wavelength_mask]
+
+        binned_flux = np.nanmean(flux_in_bin, axis=1)
+        normalized_flux = binned_flux / np.nanmedian(binned_flux)
+
+        return {
+            "bin_start": float(bin_start),
+            "bin_center": float(bin_center),
+            "bin_end": float(bin_end),
+            "channels": int(channels_in_bin),
+            "lightcurve": normalized_flux
+        }
+
+    def extract_all_bins(self, raw_table, bin_width: float = 0.03):
+        waves = np.array(raw_table["WAVELENGTH"][0], dtype=float)
+        valid_waves = waves[np.isfinite(waves)]
+
+        min_wave = np.min(valid_waves)
+        max_wave = np.max(valid_waves)
+
+        bins = []
+        bin_start = min_wave
+
+        while bin_start + bin_width <= max_wave:
+            bin_end = bin_start + bin_width
+            bin_center = (bin_start + bin_end) / 2
+
+            extracted_bin = self.extract_binned_lightcurve(raw_table, bin_center=bin_center, bin_width=bin_width)
+
+            if extracted_bin is not None:
+                bins.append(extracted_bin)
+
+            bin_start = bin_end
+
+        return bins
