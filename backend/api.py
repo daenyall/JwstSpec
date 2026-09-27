@@ -40,6 +40,80 @@ def run_analysis(target: str = target_name):
     print(f"No cached data for {target}. Running analysis")
 
     fits_data = fetcher.get_data(target)
+    print("\n=== SNR BY WAVELENGTH BIN ===")
+
+    bin_width = 0.03
+
+    wavelengths = np.asarray(fits_data["WAVELENGTH"].iloc[0], dtype=float)
+    flux_matrix = np.vstack(fits_data["FLUX"]).astype(float)
+    error_matrix = np.vstack(fits_data["FLUX_ERROR"]).astype(float)
+
+    finite_wavelengths = wavelengths[np.isfinite(wavelengths)]
+
+    min_wavelength = np.nanmin(finite_wavelengths)
+    max_wavelength = np.nanmax(finite_wavelengths)
+
+    bin_start = min_wavelength
+    snr_results = []
+
+    while bin_start + bin_width <= max_wavelength:
+        bin_end = bin_start + bin_width
+        bin_center = bin_start + bin_width / 2
+
+        mask = (wavelengths >= bin_start) & (wavelengths < bin_end)
+        channels = int(mask.sum())
+
+        if channels == 0:
+            bin_start = bin_end
+            continue
+
+        flux_in_bin = flux_matrix[:, mask]
+        error_in_bin = error_matrix[:, mask]
+
+        binned_flux = np.nanmean(flux_in_bin, axis=1)
+        binned_error = np.sqrt(np.nansum(error_in_bin ** 2, axis=1)) / channels
+
+        valid = np.isfinite(binned_flux) & np.isfinite(binned_error) & (binned_error > 0)
+
+        snr = np.full(len(binned_flux), np.nan)
+        snr[valid] = np.abs(binned_flux[valid]) / binned_error[valid]
+
+        median_snr = np.nanmedian(snr)
+        median_flux = np.nanmedian(binned_flux)
+        negative_fraction = np.mean(binned_flux < 0)
+
+        snr_results.append({
+            "bin_center": bin_center,
+            "channels": channels,
+            "median_snr": median_snr,
+            "median_flux": median_flux,
+            "negative_fraction": negative_fraction
+        })
+
+        bin_start = bin_end
+
+    print("\nALL BINS:")
+
+    for result in snr_results:
+        print(
+            f"λ={result['bin_center']:.4f} µm | "
+            f"SNR={result['median_snr']:.2f} | "
+            f"flux={result['median_flux']:.8f} | "
+            f"negative={result['negative_fraction'] * 100:.1f}% | "
+            f"channels={result['channels']}"
+        )
+
+    print("\n10 LOWEST-SNR BINS:")
+
+    lowest_snr = sorted(snr_results, key=lambda result: result["median_snr"])
+
+    for result in lowest_snr[:10]:
+        print(
+            f"λ={result['bin_center']:.4f} µm | "
+            f"SNR={result['median_snr']:.2f} | "
+            f"flux={result['median_flux']:.8f} | "
+            f"negative={result['negative_fraction'] * 100:.1f}%"
+        )
 
     tobs = float(np.nanmedian(fits_data["TDB-MID"]))
 

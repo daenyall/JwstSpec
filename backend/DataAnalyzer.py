@@ -26,20 +26,28 @@ class DataAnalyzer:
     def calculate_binned_spectrum(self, bins, tdb_mid, transit_start, transit_end):
         times = np.asarray(tdb_mid, dtype=float)
 
-        in_transit = (times >= transit_start) & (times <= transit_end)
-        out_of_transit = ~in_transit
+        in_transit_mask = (times >= transit_start) & (times <= transit_end)
+        out_of_transit_mask = ~in_transit_mask
 
-        spectrum = []
         rng = np.random.default_rng(42)
+        spectrum = []
 
         for bin_data in bins:
+            quality_status = bin_data.get("quality_status", "valid")
+
+            if quality_status == "rejected":
+                continue
+
+            if bin_data.get("lightcurve") is None:
+                continue
+
             lightcurve = np.asarray(bin_data["lightcurve"], dtype=float)
 
             if len(lightcurve) != len(times):
                 raise ValueError("Lightcurve length does not match TDB-MID length")
 
-            in_flux = lightcurve[in_transit]
-            out_flux = lightcurve[out_of_transit]
+            in_flux = lightcurve[in_transit_mask]
+            out_flux = lightcurve[out_of_transit_mask]
 
             in_flux = in_flux[np.isfinite(in_flux)]
             out_flux = out_flux[np.isfinite(out_flux)]
@@ -47,13 +55,13 @@ class DataAnalyzer:
             if len(in_flux) == 0 or len(out_flux) == 0:
                 continue
 
-            in_transit_median = np.nanmedian(in_flux)
-            out_of_transit_median = np.nanmedian(out_flux)
+            in_median = np.nanmedian(in_flux)
+            out_median = np.nanmedian(out_flux)
 
-            if not np.isfinite(out_of_transit_median) or out_of_transit_median == 0:
+            if not np.isfinite(out_median) or abs(out_median) < 1e-12:
                 continue
 
-            depth = (out_of_transit_median - in_transit_median) / out_of_transit_median
+            depth = (out_median - in_median) / out_median
 
             bootstrap_depths = []
 
@@ -61,28 +69,36 @@ class DataAnalyzer:
                 in_sample = rng.choice(in_flux, size=len(in_flux), replace=True)
                 out_sample = rng.choice(out_flux, size=len(out_flux), replace=True)
 
-                in_median = np.nanmedian(in_sample)
-                out_median = np.nanmedian(out_sample)
+                sample_in_median = np.nanmedian(in_sample)
+                sample_out_median = np.nanmedian(out_sample)
 
-                if out_median != 0:
-                    bootstrap_depth = (out_median - in_median) / out_median
-                    bootstrap_depths.append(bootstrap_depth)
+                if not np.isfinite(sample_out_median) or abs(sample_out_median) < 1e-12:
+                    continue
 
-            uncertainty = np.nanstd(bootstrap_depths, ddof=1)
+                bootstrap_depth = (sample_out_median - sample_in_median) / sample_out_median
+                bootstrap_depths.append(bootstrap_depth)
+
+            if len(bootstrap_depths) < 2:
+                uncertainty = np.nan
+            else:
+                uncertainty = np.nanstd(bootstrap_depths, ddof=1)
 
             spectrum.append({
-                "bin_start": float(bin_data["bin_start"]),
-                "bin_center": float(bin_data["bin_center"]),
-                "bin_end": float(bin_data["bin_end"]),
-                "channels": int(bin_data["channels"]),
-                "in_transit_median": float(in_transit_median),
-                "out_of_transit_median": float(out_of_transit_median),
+                "bin_start": bin_data["bin_start"],
+                "bin_center": bin_data["bin_center"],
+                "bin_end": bin_data["bin_end"],
+                "channels": bin_data["channels"],
+                "in_transit_median": float(in_median),
+                "out_of_transit_median": float(out_median),
                 "depth": float(depth),
-                "uncertainty": float(uncertainty)
+                "uncertainty": float(uncertainty),
+                "quality_status": quality_status,
+                "quality_reasons": bin_data.get("quality_reasons", []),
+                "median_snr": bin_data.get("median_snr"),
+                "negative_fraction": bin_data.get("negative_fraction")
             })
 
         return spectrum
-
 
 
 
