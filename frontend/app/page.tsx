@@ -40,13 +40,35 @@ interface AnalysisResponse {
 }
 
 export default function Home() {
+  const [target, setTarget] = useState("WASP-96b");
   const [data, setData] = useState<AnalysisResponse | null>(null);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+
+  const analyzeTarget = async (targetName: string) => {
+    setLoading(true);
+    setError(null);
+
+    try {
+      const response = await fetch(`http://localhost:8000/analyze?target=${encodeURIComponent(targetName)}`);
+
+      if (!response.ok) {
+        throw new Error(`Backend returned ${response.status}`);
+      }
+
+      const jsonData: AnalysisResponse = await response.json();
+      setData(jsonData);
+    } catch (error) {
+      setError(error instanceof Error ? error.message : "Unknown error");
+    } finally {
+      setLoading(false);
+    }
+  };
+
   useEffect(() => {
-    fetch("http://localhost:8000/analyze?target=WASP-96b")
-      .then(response => response.json())
-      .then(jsonData => setData(jsonData));
+    analyzeTarget("WASP-96b");
   }, []);
-  
+
   const spectrumChartData = data
     ? data.spectrum.map(point => ({
       ...point,
@@ -54,38 +76,81 @@ export default function Home() {
       uncertaintyPercent: point.uncertainty * 100
     }))
     : [];
+
   return (
+  <div className="flex min-h-screen flex-col items-center bg-zinc-950 font-sans text-zinc-100">
+    <main className="flex w-full max-w-4xl flex-1 flex-col gap-8 bg-zinc-900 px-8 py-20 sm:px-16">
 
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
+      <form
+        className="flex w-full gap-3"
+        onSubmit={(event) => {
+          event.preventDefault();
+          analyzeTarget(target);
+        }}
+      >
+        <input
+          type="text"
+          value={target}
+          onChange={(event) => setTarget(event.target.value)}
+          placeholder="WASP-39b"
+          className="flex-1 rounded-lg border border-zinc-700 bg-zinc-800 px-4 py-2 text-zinc-100 outline-none placeholder:text-zinc-500 focus:border-cyan-500"
+        />
 
-        <pre>
-          {data ? data.target : "Loading data..."}
+        <button
+          type="submit"
+          disabled={loading || target.trim() === ""}
+          className="rounded-lg bg-cyan-600 px-5 py-2 font-medium text-white transition hover:bg-cyan-500 disabled:cursor-not-allowed disabled:opacity-50"
+        >
+          {loading ? "Analyzing..." : "Analyze"}
+        </button>
+      </form>
 
+      {error ? (
+        <p className="text-red-400">
+          {error}
+        </p>
+      ) : null}
 
+      <div>
+        <p className="text-sm text-zinc-400">Current target</p>
+        <p className="text-xl font-semibold text-zinc-100">
+          {data ? data.target : loading ? "Loading data..." : "No data"}
+        </p>
+      </div>
 
-        </pre>
+      <div className="w-full rounded-xl border border-zinc-800 bg-zinc-950 p-4">
+        {data ?
+          <ResponsiveContainer width="100%" aspect={3}>
+            <LineChart data={spectrumChartData} margin={{ top: 10, right: 20, bottom: 30, left: 50 }}>
+              <CartesianGrid stroke="#3f3f46" />
+              <XAxis
+                dataKey="bin_center"
+                type="number"
+                domain={["dataMin", "dataMax"]}
+                stroke="#a1a1aa"
+                tick={{ fill: "#d4d4d8" }}
+                tickFormatter={(value) => value.toFixed(1)}
+                label={{ value: "Wavelength [µm]", position: "insideBottom", offset: -20, fill: "#d4d4d8" }}
+              />
+              <YAxis
+                domain={["auto", "auto"]}
+                stroke="#a1a1aa"
+                tick={{ fill: "#d4d4d8" }}
+                tickFormatter={(value) => value.toFixed(2)}
+                label={{ value: "Transit depth [%]", angle: -90, position: "insideLeft", dx: -10, fill: "#d4d4d8" }}
+              />
+              <Tooltip contentStyle={{ backgroundColor: "#18181b", borderColor: "#3f3f46", color: "#f4f4f5" }} />
+              <Legend />
+              <Line type="linear" dataKey="depthPercent" name="Transit depth" stroke="#22d3ee" strokeWidth={2} dot={{ r: 2 }} activeDot={{ r: 5 }} isAnimationActive={false}>
+                <ErrorBar dataKey="uncertaintyPercent" width={4} stroke="#a5f3fc" strokeWidth={1} direction="y" />
+              </Line>
+            </LineChart>
+          </ResponsiveContainer>
+          : null
+        }
+      </div>
 
-        <div className="flex w-full">
-
-          {data ?
-               <ResponsiveContainer width="100%" aspect={3}>
-        <LineChart data={spectrumChartData} margin={{ top: 10, right: 20, bottom: 30, left: 50 }}>
-            <CartesianGrid />
-            <XAxis dataKey="bin_center" type="number" domain={["dataMin", "dataMax"]} tickFormatter={(value) => value.toFixed(1)} label={{ value: "Wavelength [µm]", position: "insideBottom", offset: -20 }} />
-            <YAxis domain={["auto", "auto"]} tickFormatter={(value) => value.toFixed(2)} label={{ value: "Transit depth [%]", angle: -90, position: "insideLeft", dx: -10 }} />
-            <Tooltip />
-            <Legend />
-            <Line type="linear" dataKey="depthPercent" name="Transit depth" stroke="white" dot={{ r: 2 }} activeDot={{ r: 5 }} isAnimationActive={false}>
-                <ErrorBar dataKey="uncertaintyPercent" width={4} strokeWidth={1} direction="y" />
-            </Line>
-        </LineChart>
-    </ResponsiveContainer>
-            : null
-          }
-        </div>
-       
-      </main>
-    </div>
-  );
+    </main>
+  </div>
+);
 }

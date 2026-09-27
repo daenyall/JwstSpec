@@ -65,7 +65,6 @@ class MastApiFetcher(DataFetcher):
         step1 = self._filter_mission(step0)
         step2 = self._get_product_filename(step1)
         step3 = self._filter_object(step2)
-
         segmented_files = step3[
             step3["productFilename"].str.contains(
                 "-seg",

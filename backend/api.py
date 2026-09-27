@@ -17,7 +17,7 @@ provider = PlanetParametersProvider()
 cache = AnalysisCache()
 
 
-target_name = "WASP-96b"
+target_name = "WASP-39b"
 
 
 app = FastAPI(title="Spectrum API")

@@ -1,0 +1,1597 @@
+{
+  "target": "WASP-39b",
+  "spectrum": [
+    {
+      "bin_start": 0.5816548222352591,
+      "bin_center": 0.5966548222352591,
+      "bin_end": 0.6116548222352591,
+      "channels": 7,
+      "in_transit_median": 0.9815095571101699,
+      "out_of_transit_median": 1.0026517479715618,
+      "depth": 0.021086275373442587,
+      "uncertainty": 8.996573375917322e-05
+    },
+    {
+      "bin_start": 0.6116548222352591,
+      "bin_center": 0.6266548222352591,
+      "bin_end": 0.6416548222352592,
+      "channels": 6,
+      "in_transit_median": 0.9797623222209448,
+      "out_of_transit_median": 1.0016492527572347,
+      "depth": 0.021850892890941446,
+      "uncertainty": 8.364868466521261e-05
+    },
+    {
+      "bin_start": 0.6416548222352592,
+      "bin_center": 0.6566548222352592,
+      "bin_end": 0.6716548222352592,
+      "channels": 6,
+      "in_transit_median": 0.9796472270772418,
+      "out_of_transit_median": 1.0014038982337823,
+      "depth": 0.021726169825096148,
+      "uncertainty": 6.818120964800737e-05
+    },
+    {
+      "bin_start": 0.6716548222352592,
+      "bin_center": 0.6866548222352592,
+      "bin_end": 0.7016548222352592,
+      "channels": 5,
+      "in_transit_median": 0.9797183140437206,
+      "out_of_transit_median": 1.001279673776156,
+      "depth": 0.02153380348880992,
+      "uncertainty": 6.264892322004344e-05
+    },
+    {
+      "bin_start": 0.7016548222352592,
+      "bin_center": 0.7166548222352592,
+      "bin_end": 0.7316548222352592,
+      "channels": 4,
+      "in_transit_median": 0.9797441291759124,
+      "out_of_transit_median": 1.0013232613380099,
+      "depth": 0.021550615066369842,
+      "uncertainty": 5.9997183893940896e-05
+    },
+    {
+      "bin_start": 0.7316548222352592,
+      "bin_center": 0.7466548222352593,
+      "bin_end": 0.7616548222352593,
+      "channels": 4,
+      "in_transit_median": 0.9799583333575541,
+      "out_of_transit_median": 1.0014203787090294,
+      "depth": 0.021431604356946386,
+      "uncertainty": 5.640807921732448e-05
+    },
+    {
+      "bin_start": 0.7616548222352593,
+      "bin_center": 0.7766548222352593,
+      "bin_end": 0.7916548222352593,
+      "channels": 3,
+      "in_transit_median": 0.9801583118518065,
+      "out_of_transit_median": 1.0016086520642975,
+      "depth": 0.021415889497641886,
+      "uncertainty": 6.858606072459343e-05
+    },
+    {
+      "bin_start": 0.7916548222352593,
+      "bin_center": 0.8066548222352593,
+      "bin_end": 0.8216548222352593,
+      "channels": 4,
+      "in_transit_median": 0.9797779391403838,
+      "out_of_transit_median": 1.001359066382168,
+      "depth": 0.021551836864827336,
+      "uncertainty": 6.263401314447884e-05
+    },
+    {
+      "bin_start": 0.8216548222352593,
+      "bin_center": 0.8366548222352593,
+      "bin_end": 0.8516548222352593,
+      "channels": 3,
+      "in_transit_median": 0.9805958537001283,
+      "out_of_transit_median": 1.0015272731684068,
+      "depth": 0.02089950022235587,
+      "uncertainty": 7.966594332777888e-05
+    },
+    {
+      "bin_start": 0.8516548222352593,
+      "bin_center": 0.8666548222352594,
+      "bin_end": 0.8816548222352594,
+      "channels": 2,
+      "in_transit_median": 0.9808118475364719,
+      "out_of_transit_median": 1.00179707827686,
+      "depth": 0.020947586288117027,
+      "uncertainty": 7.398030317648902e-05
+    },
+    {
+      "bin_start": 0.8816548222352594,
+      "bin_center": 0.8966548222352594,
+      "bin_end": 0.9116548222352594,
+      "channels": 3,
+      "in_transit_median": 0.9805269894360331,
+      "out_of_transit_median": 1.00151474383948,
+      "depth": 0.020956011414257094,
+      "uncertainty": 5.825728154875615e-05
+    },
+    {
+      "bin_start": 0.9116548222352594,
+      "bin_center": 0.9266548222352594,
+      "bin_end": 0.9416548222352594,
+      "channels": 2,
+      "in_transit_median": 0.9805497942875389,
+      "out_of_transit_median": 1.002015309522089,
+      "depth": 0.021422342583556,
+      "uncertainty": 6.592771940628004e-05
+    },
+    {
+      "bin_start": 0.9416548222352594,
+      "bin_center": 0.9566548222352594,
+      "bin_end": 0.9716548222352595,
+      "channels": 3,
+      "in_transit_median": 0.9804539116399745,
+      "out_of_transit_median": 1.001829119749267,
+      "depth": 0.0213361816780113,
+      "uncertainty": 7.499777745898457e-05
+    },
+    {
+      "bin_start": 0.9716548222352595,
+      "bin_center": 0.9866548222352595,
+      "bin_end": 1.0016548222352595,
+      "channels": 2,
+      "in_transit_median": 0.9812552563341319,
+      "out_of_transit_median": 1.0021085412564559,
+      "depth": 0.020809407428239127,
+      "uncertainty": 7.996903711302311e-05
+    },
+    {
+      "bin_start": 1.0016548222352595,
+      "bin_center": 1.0166548222352594,
+      "bin_end": 1.0316548222352593,
+      "channels": 2,
+      "in_transit_median": 0.9807935294537812,
+      "out_of_transit_median": 1.0020561138190605,
+      "depth": 0.021218955777079992,
+      "uncertainty": 7.886488008582308e-05
+    },
+    {
+      "bin_start": 1.0316548222352597,
+      "bin_center": 1.0466548222352596,
+      "bin_end": 1.0616548222352595,
+      "channels": 2,
+      "in_transit_median": 0.9824104721945888,
+      "out_of_transit_median": 1.0021721817983538,
+      "depth": 0.019718876618889464,
+      "uncertainty": 7.462565926084871e-05
+    },
+    {
+      "bin_start": 1.0616548222352595,
+      "bin_center": 1.0766548222352594,
+      "bin_end": 1.0916548222352593,
+      "channels": 2,
+      "in_transit_median": 0.9873374619042979,
+      "out_of_transit_median": 1.0059135845520468,
+      "depth": 0.018466916972814516,
+      "uncertainty": 9.262092231985236e-05
+    },
+    {
+      "bin_start": 1.0916548222352598,
+      "bin_center": 1.1066548222352597,
+      "bin_end": 1.1216548222352596,
+      "channels": 2,
+      "in_transit_median": 0.9880418241710375,
+      "out_of_transit_median": 1.00541600545124,
+      "depth": 0.017280589513198392,
+      "uncertainty": 9.027554157171419e-05
+    },
+    {
+      "bin_start": 1.1216548222352596,
+      "bin_center": 1.1366548222352595,
+      "bin_end": 1.1516548222352594,
+      "channels": 1,
+      "in_transit_median": 0.9817950626731033,
+      "out_of_transit_median": 1.00239325216103,
+      "depth": 0.02054901052408279,
+      "uncertainty": 9.816350519690462e-05
+    },
+    {
+      "bin_start": 1.1516548222352598,
+      "bin_center": 1.1666548222352597,
+      "bin_end": 1.1816548222352596,
+      "channels": 2,
+      "in_transit_median": 0.9803841222910344,
+      "out_of_transit_median": 1.0018983599382674,
+      "depth": 0.021473473265849582,
+      "uncertainty": 8.046209607000977e-05
+    },
+    {
+      "bin_start": 1.1816548222352596,
+      "bin_center": 1.1966548222352595,
+      "bin_end": 1.2116548222352594,
+      "channels": 2,
+      "in_transit_median": 0.9803414243602424,
+      "out_of_transit_median": 1.0018972532946981,
+      "depth": 0.02151500951177406,
+      "uncertainty": 6.905236791350092e-05
+    },
+    {
+      "bin_start": 1.2116548222352599,
+      "bin_center": 1.2266548222352598,
+      "bin_end": 1.2416548222352597,
+      "channels": 1,
+      "in_transit_median": 0.9830631301693198,
+      "out_of_transit_median": 1.002922987941224,
+      "depth": 0.01980197683241071,
+      "uncertainty": 8.204494355087224e-05
+    },
+    {
+      "bin_start": 1.2416548222352597,
+      "bin_center": 1.2566548222352596,
+      "bin_end": 1.2716548222352595,
+      "channels": 2,
+      "in_transit_median": 0.9816118525076094,
+      "out_of_transit_median": 1.0023053862148104,
+      "depth": 0.020645936848997428,
+      "uncertainty": 7.219961987019934e-05
+    },
+    {
+      "bin_start": 1.27165482223526,
+      "bin_center": 1.2866548222352598,
+      "bin_end": 1.3016548222352597,
+      "channels": 2,
+      "in_transit_median": 0.9827623425433603,
+      "out_of_transit_median": 1.0018419628999697,
+      "depth": 0.01904454101860626,
+      "uncertainty": 6.914395219122495e-05
+    },
+    {
+      "bin_start": 1.3016548222352597,
+      "bin_center": 1.3166548222352596,
+      "bin_end": 1.3316548222352595,
+      "channels": 1,
+      "in_transit_median": 0.9821495798533939,
+      "out_of_transit_median": 1.0024535169012312,
+      "depth": 0.02025424292051017,
+      "uncertainty": 8.837168202250297e-05
+    },
+    {
+      "bin_start": 1.33165482223526,
+      "bin_center": 1.34665482223526,
+      "bin_end": 1.3616548222352598,
+      "channels": 2,
+      "in_transit_median": 0.9808425607748801,
+      "out_of_transit_median": 1.0018636897093018,
+      "depth": 0.02098202495044131,
+      "uncertainty": 7.232756307907358e-05
+    },
+    {
+      "bin_start": 1.3616548222352598,
+      "bin_center": 1.3766548222352597,
+      "bin_end": 1.3916548222352596,
+      "channels": 1,
+      "in_transit_median": 0.9812078584959631,
+      "out_of_transit_median": 1.0025327623060778,
+      "depth": 0.02127102934876861,
+      "uncertainty": 0.00010320600400247308
+    },
+    {
+      "bin_start": 1.39165482223526,
+      "bin_center": 1.40665482223526,
+      "bin_end": 1.4216548222352599,
+      "channels": 2,
+      "in_transit_median": 0.9805719543805259,
+      "out_of_transit_median": 1.002022479134654,
+      "depth": 0.021407229079982985,
+      "uncertainty": 7.327576039673827e-05
+    },
+    {
+      "bin_start": 1.4216548222352599,
+      "bin_center": 1.4366548222352598,
+      "bin_end": 1.4516548222352597,
+      "channels": 1,
+      "in_transit_median": 0.9811375982153354,
+      "out_of_transit_median": 1.0026209774464956,
+      "depth": 0.021427218973489533,
+      "uncertainty": 9.884368532894233e-05
+    },
+    {
+      "bin_start": 1.45165482223526,
+      "bin_center": 1.46665482223526,
+      "bin_end": 1.48165482223526,
+      "channels": 2,
+      "in_transit_median": 0.9804448814897835,
+      "out_of_transit_median": 1.0020047736885764,
+      "depth": 0.021516755972555653,
+      "uncertainty": 7.336240028661763e-05
+    },
+    {
+      "bin_start": 1.48165482223526,
+      "bin_center": 1.4966548222352598,
+      "bin_end": 1.5116548222352597,
+      "channels": 1,
+      "in_transit_median": 0.9819119853093778,
+      "out_of_transit_median": 1.0027815643125133,
+      "depth": 0.02081168994908998,
+      "uncertainty": 0.00011420495907474916
+    },
+    {
+      "bin_start": 1.5116548222352602,
+      "bin_center": 1.52665482223526,
+      "bin_end": 1.54165482223526,
+      "channels": 2,
+      "in_transit_median": 0.9806686556487821,
+      "out_of_transit_median": 1.001541554880152,
+      "depth": 0.020840772037529334,
+      "uncertainty": 5.6333902092323635e-05
+    },
+    {
+      "bin_start": 1.54165482223526,
+      "bin_center": 1.5566548222352599,
+      "bin_end": 1.5716548222352598,
+      "channels": 1,
+      "in_transit_median": 0.9814614679979476,
+      "out_of_transit_median": 1.0020170955014862,
+      "depth": 0.020514248305565037,
+      "uncertainty": 7.223379840837846e-05
+    },
+    {
+      "bin_start": 1.5716548222352602,
+      "bin_center": 1.58665482223526,
+      "bin_end": 1.60165482223526,
+      "channels": 2,
+      "in_transit_median": 0.9802748644687607,
+      "out_of_transit_median": 1.0014878727748497,
+      "depth": 0.021181492939413852,
+      "uncertainty": 5.2866597395906586e-05
+    },
+    {
+      "bin_start": 1.60165482223526,
+      "bin_center": 1.61665482223526,
+      "bin_end": 1.6316548222352598,
+      "channels": 1,
+      "in_transit_median": 0.9813103538163414,
+      "out_of_transit_median": 1.0020452350143283,
+      "depth": 0.020692560049637335,
+      "uncertainty": 7.056688755060464e-05
+    },
+    {
+      "bin_start": 1.6316548222352603,
+      "bin_center": 1.6466548222352602,
+      "bin_end": 1.66165482223526,
+      "channels": 2,
+      "in_transit_median": 0.9808333974247754,
+      "out_of_transit_median": 1.0015198698193566,
+      "depth": 0.020655079362841215,
+      "uncertainty": 5.252019748992017e-05
+    },
+    {
+      "bin_start": 1.66165482223526,
+      "bin_center": 1.67665482223526,
+      "bin_end": 1.6916548222352599,
+      "channels": 1,
+      "in_transit_median": 0.9813805725708642,
+      "out_of_transit_median": 1.0020950261541302,
+      "depth": 0.020671146989686695,
+      "uncertainty": 7.704087403717339e-05
+    },
+    {
+      "bin_start": 1.6916548222352603,
+      "bin_center": 1.7066548222352602,
+      "bin_end": 1.7216548222352601,
+      "channels": 2,
+      "in_transit_median": 0.9805777839066823,
+      "out_of_transit_median": 1.0016544189906993,
+      "depth": 0.021041823092294198,
+      "uncertainty": 6.531656174880148e-05
+    },
+    {
+      "bin_start": 1.7216548222352601,
+      "bin_center": 1.73665482223526,
+      "bin_end": 1.75165482223526,
+      "channels": 1,
+      "in_transit_median": 0.9817227544403783,
+      "out_of_transit_median": 1.0022461581227669,
+      "depth": 0.020477408185659154,
+      "uncertainty": 7.350717501104167e-05
+    },
+    {
+      "bin_start": 1.7516548222352604,
+      "bin_center": 1.7666548222352603,
+      "bin_end": 1.7816548222352602,
+      "channels": 2,
+      "in_transit_median": 0.9805891489542757,
+      "out_of_transit_median": 1.0015948466026803,
+      "depth": 0.02097225012653967,
+      "uncertainty": 6.282998556383374e-05
+    },
+    {
+      "bin_start": 1.7816548222352602,
+      "bin_center": 1.79665482223526,
+      "bin_end": 1.81165482223526,
+      "channels": 1,
+      "in_transit_median": 0.9808603087994485,
+      "out_of_transit_median": 1.0020024544930015,
+      "depth": 0.021099894115778995,
+      "uncertainty": 6.706186469958356e-05
+    },
+    {
+      "bin_start": 1.8116548222352604,
+      "bin_center": 1.8266548222352603,
+      "bin_end": 1.8416548222352602,
+      "channels": 2,
+      "in_transit_median": 0.9803841192345231,
+      "out_of_transit_median": 1.0015828320617963,
+      "depth": 0.021165211851360215,
+      "uncertainty": 6.182956298026513e-05
+    },
+    {
+      "bin_start": 1.8416548222352602,
+      "bin_center": 1.8566548222352601,
+      "bin_end": 1.87165482223526,
+      "channels": 1,
+      "in_transit_median": 0.9804631941228928,
+      "out_of_transit_median": 1.002249244617653,
+      "depth": 0.02173715830843181,
+      "uncertainty": 6.790465985774843e-05
+    },
+    {
+      "bin_start": 1.8716548222352605,
+      "bin_center": 1.8866548222352604,
+      "bin_end": 1.9016548222352603,
+      "channels": 2,
+      "in_transit_median": 0.9800356529851231,
+      "out_of_transit_median": 1.0015255433373498,
+      "depth": 0.021457156530043823,
+      "uncertainty": 4.49325472522676e-05
+    },
+    {
+      "bin_start": 1.9016548222352603,
+      "bin_center": 1.9166548222352602,
+      "bin_end": 1.93165482223526,
+      "channels": 2,
+      "in_transit_median": 0.9801000370725456,
+      "out_of_transit_median": 1.0015159787753396,
+      "depth": 0.021383524733156623,
+      "uncertainty": 5.741310553462851e-05
+    },
+    {
+      "bin_start": 1.9316548222352605,
+      "bin_center": 1.9466548222352604,
+      "bin_end": 1.9616548222352603,
+      "channels": 1,
+      "in_transit_median": 0.9810007476772651,
+      "out_of_transit_median": 1.0020268322206647,
+      "depth": 0.020983554399239154,
+      "uncertainty": 6.617818540841336e-05
+    },
+    {
+      "bin_start": 1.9616548222352603,
+      "bin_center": 1.9766548222352602,
+      "bin_end": 1.9916548222352601,
+      "channels": 2,
+      "in_transit_median": 0.9806178431660456,
+      "out_of_transit_median": 1.0015991032531713,
+      "depth": 0.020947762452041923,
+      "uncertainty": 5.5084798372334494e-05
+    },
+    {
+      "bin_start": 1.9916548222352606,
+      "bin_center": 2.0066548222352605,
+      "bin_end": 2.0216548222352606,
+      "channels": 2,
+      "in_transit_median": 0.980897192420707,
+      "out_of_transit_median": 1.0016339339219011,
+      "depth": 0.0207029143072253,
+      "uncertainty": 5.661666046987193e-05
+    },
+    {
+      "bin_start": 2.0216548222352597,
+      "bin_center": 2.03665482223526,
+      "bin_end": 2.05165482223526,
+      "channels": 1,
+      "in_transit_median": 0.9813384634144597,
+      "out_of_transit_median": 1.0020895317790202,
+      "depth": 0.020707798760975806,
+      "uncertainty": 7.17984042453459e-05
+    },
+    {
+      "bin_start": 2.05165482223526,
+      "bin_center": 2.06665482223526,
+      "bin_end": 2.08165482223526,
+      "channels": 2,
+      "in_transit_median": 0.9809400745496214,
+      "out_of_transit_median": 1.0016782482178916,
+      "depth": 0.020703428176828232,
+      "uncertainty": 5.7059463064664464e-05
+    },
+    {
+      "bin_start": 2.0816548222352593,
+      "bin_center": 2.0966548222352595,
+      "bin_end": 2.1116548222352596,
+      "channels": 2,
+      "in_transit_median": 0.9808306151508024,
+      "out_of_transit_median": 1.0016976720977515,
+      "depth": 0.02083169156542953,
+      "uncertainty": 5.448476188744927e-05
+    },
+    {
+      "bin_start": 2.1116548222352596,
+      "bin_center": 2.1266548222352597,
+      "bin_end": 2.14165482223526,
+      "channels": 1,
+      "in_transit_median": 0.981704282672119,
+      "out_of_transit_median": 1.0022018701629318,
+      "depth": 0.020452553623234112,
+      "uncertainty": 7.932987295221961e-05
+    },
+    {
+      "bin_start": 2.141654822235259,
+      "bin_center": 2.156654822235259,
+      "bin_end": 2.171654822235259,
+      "channels": 2,
+      "in_transit_median": 0.9810801071816448,
+      "out_of_transit_median": 1.001738161870402,
+      "depth": 0.02062220994973908,
+      "uncertainty": 6.777695207194335e-05
+    },
+    {
+      "bin_start": 2.171654822235259,
+      "bin_center": 2.1866548222352593,
+      "bin_end": 2.2016548222352594,
+      "channels": 2,
+      "in_transit_median": 0.9813354398157725,
+      "out_of_transit_median": 1.0018337998805926,
+      "depth": 0.02046083898074038,
+      "uncertainty": 7.216925292190196e-05
+    },
+    {
+      "bin_start": 2.2016548222352585,
+      "bin_center": 2.2166548222352587,
+      "bin_end": 2.231654822235259,
+      "channels": 1,
+      "in_transit_median": 0.9823321777400258,
+      "out_of_transit_median": 1.0023675722076273,
+      "depth": 0.019988071265589016,
+      "uncertainty": 8.356736439428614e-05
+    },
+    {
+      "bin_start": 2.231654822235259,
+      "bin_center": 2.246654822235259,
+      "bin_end": 2.261654822235259,
+      "channels": 2,
+      "in_transit_median": 0.9812012243558881,
+      "out_of_transit_median": 1.0018211405344817,
+      "depth": 0.020582432676148826,
+      "uncertainty": 6.758630867767016e-05
+    },
+    {
+      "bin_start": 2.261654822235258,
+      "bin_center": 2.2766548222352583,
+      "bin_end": 2.2916548222352584,
+      "channels": 2,
+      "in_transit_median": 0.9813150105973404,
+      "out_of_transit_median": 1.001829197848921,
+      "depth": 0.02047673125880917,
+      "uncertainty": 6.373859892461144e-05
+    },
+    {
+      "bin_start": 2.2916548222352584,
+      "bin_center": 2.3066548222352585,
+      "bin_end": 2.3216548222352587,
+      "channels": 2,
+      "in_transit_median": 0.9812788472115268,
+      "out_of_transit_median": 1.001864607601195,
+      "depth": 0.020547447462943635,
+      "uncertainty": 6.657141113684771e-05
+    },
+    {
+      "bin_start": 2.3216548222352578,
+      "bin_center": 2.336654822235258,
+      "bin_end": 2.351654822235258,
+      "channels": 2,
+      "in_transit_median": 0.9812057674695869,
+      "out_of_transit_median": 1.0019288358489888,
+      "depth": 0.020683173932050953,
+      "uncertainty": 6.755440335870184e-05
+    },
+    {
+      "bin_start": 2.351654822235258,
+      "bin_center": 2.366654822235258,
+      "bin_end": 2.3816548222352583,
+      "channels": 1,
+      "in_transit_median": 0.9823968949911231,
+      "out_of_transit_median": 1.0026912211588481,
+      "depth": 0.020239856238364246,
+      "uncertainty": 9.237266212195316e-05
+    },
+    {
+      "bin_start": 2.3816548222352574,
+      "bin_center": 2.3966548222352575,
+      "bin_end": 2.4116548222352576,
+      "channels": 2,
+      "in_transit_median": 0.9812737237430194,
+      "out_of_transit_median": 1.0019820467881155,
+      "depth": 0.020667359371834403,
+      "uncertainty": 7.677198951973322e-05
+    },
+    {
+      "bin_start": 2.4116548222352576,
+      "bin_center": 2.4266548222352577,
+      "bin_end": 2.441654822235258,
+      "channels": 2,
+      "in_transit_median": 0.9813349248375947,
+      "out_of_transit_median": 1.0020502357209446,
+      "depth": 0.020672926510960754,
+      "uncertainty": 7.203769867346374e-05
+    },
+    {
+      "bin_start": 2.441654822235257,
+      "bin_center": 2.456654822235257,
+      "bin_end": 2.4716548222352572,
+      "channels": 2,
+      "in_transit_median": 0.9811934975082968,
+      "out_of_transit_median": 1.0021019173473027,
+      "depth": 0.020864564249466068,
+      "uncertainty": 7.349564150107512e-05
+    },
+    {
+      "bin_start": 2.4716548222352572,
+      "bin_center": 2.4866548222352574,
+      "bin_end": 2.5016548222352575,
+      "channels": 2,
+      "in_transit_median": 0.9812614210265588,
+      "out_of_transit_median": 1.0021903354368926,
+      "depth": 0.02088317325591664,
+      "uncertainty": 7.850746756941953e-05
+    },
+    {
+      "bin_start": 2.5016548222352566,
+      "bin_center": 2.5166548222352567,
+      "bin_end": 2.531654822235257,
+      "channels": 2,
+      "in_transit_median": 0.981177615822417,
+      "out_of_transit_median": 1.002150984697161,
+      "depth": 0.02092835230919013,
+      "uncertainty": 8.00829789299258e-05
+    },
+    {
+      "bin_start": 2.531654822235257,
+      "bin_center": 2.546654822235257,
+      "bin_end": 2.561654822235257,
+      "channels": 2,
+      "in_transit_median": 0.9811084923936961,
+      "out_of_transit_median": 1.0022036965847663,
+      "depth": 0.021048818980569293,
+      "uncertainty": 8.280897469742677e-05
+    },
+    {
+      "bin_start": 2.561654822235256,
+      "bin_center": 2.5766548222352563,
+      "bin_end": 2.5916548222352565,
+      "channels": 2,
+      "in_transit_median": 0.9812148323425681,
+      "out_of_transit_median": 1.002266159000524,
+      "depth": 0.02100372886873539,
+      "uncertainty": 7.372630056276378e-05
+    },
+    {
+      "bin_start": 2.5916548222352565,
+      "bin_center": 2.6066548222352566,
+      "bin_end": 2.6216548222352567,
+      "channels": 2,
+      "in_transit_median": 0.9812567707452478,
+      "out_of_transit_median": 1.0023524551835652,
+      "depth": 0.021046174256593303,
+      "uncertainty": 8.293463284009473e-05
+    },
+    {
+      "bin_start": 2.621654822235256,
+      "bin_center": 2.636654822235256,
+      "bin_end": 2.651654822235256,
+      "channels": 2,
+      "in_transit_median": 0.9811335863241508,
+      "out_of_transit_median": 1.0023501183440344,
+      "depth": 0.021166787564144827,
+      "uncertainty": 7.671730114739827e-05
+    },
+    {
+      "bin_start": 2.651654822235256,
+      "bin_center": 2.666654822235256,
+      "bin_end": 2.6816548222352563,
+      "channels": 2,
+      "in_transit_median": 0.9811262751982156,
+      "out_of_transit_median": 1.0023518625649683,
+      "depth": 0.021175784831124582,
+      "uncertainty": 8.710614894610804e-05
+    },
+    {
+      "bin_start": 2.6816548222352554,
+      "bin_center": 2.6966548222352555,
+      "bin_end": 2.7116548222352557,
+      "channels": 2,
+      "in_transit_median": 0.9810583654921288,
+      "out_of_transit_median": 1.0024568147115032,
+      "depth": 0.021346006037709114,
+      "uncertainty": 8.107443514954738e-05
+    },
+    {
+      "bin_start": 2.7116548222352557,
+      "bin_center": 2.726654822235256,
+      "bin_end": 2.741654822235256,
+      "channels": 2,
+      "in_transit_median": 0.9814045231297301,
+      "out_of_transit_median": 1.0025586554974266,
+      "depth": 0.02110014436731455,
+      "uncertainty": 7.601703038635351e-05
+    },
+    {
+      "bin_start": 2.741654822235255,
+      "bin_center": 2.756654822235255,
+      "bin_end": 2.7716548222352553,
+      "channels": 2,
+      "in_transit_median": 0.9813881354077434,
+      "out_of_transit_median": 1.0025458888494718,
+      "depth": 0.021104024939954828,
+      "uncertainty": 8.718084494251084e-05
+    },
+    {
+      "bin_start": 2.7716548222352553,
+      "bin_center": 2.7866548222352554,
+      "bin_end": 2.8016548222352555,
+      "channels": 2,
+      "in_transit_median": 0.9816186800190889,
+      "out_of_transit_median": 1.002712788237547,
+      "depth": 0.021037039186001538,
+      "uncertainty": 9.111200145702835e-05
+    },
+    {
+      "bin_start": 2.8016548222352546,
+      "bin_center": 2.8166548222352548,
+      "bin_end": 2.831654822235255,
+      "channels": 2,
+      "in_transit_median": 0.9813878731346579,
+      "out_of_transit_median": 1.002742789224175,
+      "depth": 0.021296504267100606,
+      "uncertainty": 9.756020491869143e-05
+    },
+    {
+      "bin_start": 2.831654822235255,
+      "bin_center": 2.846654822235255,
+      "bin_end": 2.861654822235255,
+      "channels": 2,
+      "in_transit_median": 0.9816324046935442,
+      "out_of_transit_median": 1.0027534150548907,
+      "depth": 0.021063015138363145,
+      "uncertainty": 9.44272866359115e-05
+    },
+    {
+      "bin_start": 2.8616548222352542,
+      "bin_center": 2.8766548222352544,
+      "bin_end": 2.8916548222352545,
+      "channels": 3,
+      "in_transit_median": 0.9812778772051755,
+      "out_of_transit_median": 1.002414075399284,
+      "depth": 0.021085296698063215,
+      "uncertainty": 8.350261050506386e-05
+    },
+    {
+      "bin_start": 2.8916548222352545,
+      "bin_center": 2.9066548222352546,
+      "bin_end": 2.9216548222352547,
+      "channels": 2,
+      "in_transit_median": 0.9817904148482237,
+      "out_of_transit_median": 1.002857567567043,
+      "depth": 0.021007123444188334,
+      "uncertainty": 0.00011618015910520735
+    },
+    {
+      "bin_start": 2.921654822235254,
+      "bin_center": 2.936654822235254,
+      "bin_end": 2.951654822235254,
+      "channels": 2,
+      "in_transit_median": 0.9822400966765588,
+      "out_of_transit_median": 1.00296733265739,
+      "depth": 0.02066591334127889,
+      "uncertainty": 9.407357386443882e-05
+    },
+    {
+      "bin_start": 2.951654822235254,
+      "bin_center": 2.9666548222352542,
+      "bin_end": 2.9816548222352544,
+      "channels": 2,
+      "in_transit_median": 0.9824085784574972,
+      "out_of_transit_median": 1.0031011761949116,
+      "depth": 0.02062862473744486,
+      "uncertainty": 0.00010033898163049465
+    },
+    {
+      "bin_start": 2.9816548222352535,
+      "bin_center": 2.9966548222352536,
+      "bin_end": 3.0116548222352537,
+      "channels": 3,
+      "in_transit_median": 0.9819396896077893,
+      "out_of_transit_median": 1.0027066963648945,
+      "depth": 0.020710948508064892,
+      "uncertainty": 9.627057078910446e-05
+    },
+    {
+      "bin_start": 3.0116548222352537,
+      "bin_center": 3.026654822235254,
+      "bin_end": 3.041654822235254,
+      "channels": 2,
+      "in_transit_median": 0.9823599177160849,
+      "out_of_transit_median": 1.0030984591981813,
+      "depth": 0.020674482441806964,
+      "uncertainty": 0.00011182832807213264
+    },
+    {
+      "bin_start": 3.041654822235253,
+      "bin_center": 3.056654822235253,
+      "bin_end": 3.0716548222352533,
+      "channels": 2,
+      "in_transit_median": 0.982593618141641,
+      "out_of_transit_median": 1.0031962663264582,
+      "depth": 0.020537006442678175,
+      "uncertainty": 9.686164155349148e-05
+    },
+    {
+      "bin_start": 3.0716548222352533,
+      "bin_center": 3.0866548222352534,
+      "bin_end": 3.1016548222352536,
+      "channels": 2,
+      "in_transit_median": 0.9825822186693332,
+      "out_of_transit_median": 1.003187926723899,
+      "depth": 0.020540227314993425,
+      "uncertainty": 0.00011929136151279761
+    },
+    {
+      "bin_start": 3.1016548222352527,
+      "bin_center": 3.116654822235253,
+      "bin_end": 3.131654822235253,
+      "channels": 3,
+      "in_transit_median": 0.9823032923673816,
+      "out_of_transit_median": 1.0028389840475551,
+      "depth": 0.02047755622471866,
+      "uncertainty": 0.00011237875796401715
+    },
+    {
+      "bin_start": 3.131654822235253,
+      "bin_center": 3.146654822235253,
+      "bin_end": 3.161654822235253,
+      "channels": 2,
+      "in_transit_median": 0.9827512462678754,
+      "out_of_transit_median": 1.0032855185147618,
+      "depth": 0.02046702744925974,
+      "uncertainty": 0.00010109038338444086
+    },
+    {
+      "bin_start": 3.1616548222352523,
+      "bin_center": 3.1766548222352524,
+      "bin_end": 3.1916548222352525,
+      "channels": 3,
+      "in_transit_median": 0.9823468904702534,
+      "out_of_transit_median": 1.0029623338433535,
+      "depth": 0.02055455392238087,
+      "uncertainty": 0.00010212648325304947
+    },
+    {
+      "bin_start": 3.1916548222352525,
+      "bin_center": 3.2066548222352527,
+      "bin_end": 3.221654822235253,
+      "channels": 2,
+      "in_transit_median": 0.9829973956256075,
+      "out_of_transit_median": 1.0033918939932174,
+      "depth": 0.020325556235505856,
+      "uncertainty": 0.00010673397735848361
+    },
+    {
+      "bin_start": 3.221654822235252,
+      "bin_center": 3.236654822235252,
+      "bin_end": 3.251654822235252,
+      "channels": 2,
+      "in_transit_median": 0.9832149572075068,
+      "out_of_transit_median": 1.003403058572905,
+      "depth": 0.020119633075576626,
+      "uncertainty": 0.00011673873974960926
+    },
+    {
+      "bin_start": 3.251654822235252,
+      "bin_center": 3.2666548222352523,
+      "bin_end": 3.2816548222352524,
+      "channels": 3,
+      "in_transit_median": 0.9829118065449237,
+      "out_of_transit_median": 1.002989939371561,
+      "depth": 0.020018279384953198,
+      "uncertainty": 0.00010489988156039623
+    },
+    {
+      "bin_start": 3.2816548222352515,
+      "bin_center": 3.2966548222352516,
+      "bin_end": 3.3116548222352518,
+      "channels": 2,
+      "in_transit_median": 0.9836549803462027,
+      "out_of_transit_median": 1.0035550156751154,
+      "depth": 0.01982954099982798,
+      "uncertainty": 0.00012487958975224172
+    },
+    {
+      "bin_start": 3.3116548222352518,
+      "bin_center": 3.326654822235252,
+      "bin_end": 3.341654822235252,
+      "channels": 3,
+      "in_transit_median": 0.9830019211271699,
+      "out_of_transit_median": 1.0031657969218588,
+      "depth": 0.020100242508825868,
+      "uncertainty": 0.00012143173580463079
+    },
+    {
+      "bin_start": 3.341654822235251,
+      "bin_center": 3.3566548222352512,
+      "bin_end": 3.3716548222352514,
+      "channels": 2,
+      "in_transit_median": 0.9836517268615863,
+      "out_of_transit_median": 1.00371150671895,
+      "depth": 0.019985603156964283,
+      "uncertainty": 0.00013158940121575158
+    },
+    {
+      "bin_start": 3.3716548222352514,
+      "bin_center": 3.3866548222352515,
+      "bin_end": 3.4016548222352516,
+      "channels": 3,
+      "in_transit_median": 0.9832851694877233,
+      "out_of_transit_median": 1.0032871049790266,
+      "depth": 0.01993640244356723,
+      "uncertainty": 0.00011592232532331384
+    },
+    {
+      "bin_start": 3.4016548222352507,
+      "bin_center": 3.416654822235251,
+      "bin_end": 3.431654822235251,
+      "channels": 3,
+      "in_transit_median": 0.9833906173938003,
+      "out_of_transit_median": 1.0033200349727727,
+      "depth": 0.01986347016334943,
+      "uncertainty": 0.00013333626772648734
+    },
+    {
+      "bin_start": 3.431654822235251,
+      "bin_center": 3.446654822235251,
+      "bin_end": 3.4616548222352512,
+      "channels": 2,
+      "in_transit_median": 0.983927943268226,
+      "out_of_transit_median": 1.003746780675652,
+      "depth": 0.019744857755942497,
+      "uncertainty": 0.00012870011079032048
+    },
+    {
+      "bin_start": 3.4616548222352503,
+      "bin_center": 3.4766548222352505,
+      "bin_end": 3.4916548222352506,
+      "channels": 3,
+      "in_transit_median": 0.983551416571522,
+      "out_of_transit_median": 1.0034599919603482,
+      "depth": 0.01983992939263379,
+      "uncertainty": 0.00012101762708531024
+    },
+    {
+      "bin_start": 3.4916548222352506,
+      "bin_center": 3.5066548222352507,
+      "bin_end": 3.521654822235251,
+      "channels": 2,
+      "in_transit_median": 0.9843716518562975,
+      "out_of_transit_median": 1.0039220917946352,
+      "depth": 0.019474060883936602,
+      "uncertainty": 0.00014036945025126718
+    },
+    {
+      "bin_start": 3.52165482223525,
+      "bin_center": 3.53665482223525,
+      "bin_end": 3.55165482223525,
+      "channels": 3,
+      "in_transit_median": 0.9837638845723918,
+      "out_of_transit_median": 1.003596006256625,
+      "depth": 0.01976106078600906,
+      "uncertainty": 0.00010995867098104628
+    },
+    {
+      "bin_start": 3.55165482223525,
+      "bin_center": 3.5666548222352503,
+      "bin_end": 3.5816548222352504,
+      "channels": 3,
+      "in_transit_median": 0.9838897735028883,
+      "out_of_transit_median": 1.003728945796382,
+      "depth": 0.019765467934924286,
+      "uncertainty": 0.00012958000837655015
+    },
+    {
+      "bin_start": 3.5816548222352496,
+      "bin_center": 3.5966548222352497,
+      "bin_end": 3.61165482223525,
+      "channels": 2,
+      "in_transit_median": 0.9844921848797187,
+      "out_of_transit_median": 1.0041995811594049,
+      "depth": 0.019624979585166635,
+      "uncertainty": 0.0001455900582628776
+    },
+    {
+      "bin_start": 3.61165482223525,
+      "bin_center": 3.62665482223525,
+      "bin_end": 3.64165482223525,
+      "channels": 3,
+      "in_transit_median": 0.9839272558429739,
+      "out_of_transit_median": 1.0037134243486476,
+      "depth": 0.019712965898123564,
+      "uncertainty": 0.0001301097507286369
+    },
+    {
+      "bin_start": 3.641654822235249,
+      "bin_center": 3.6566548222352493,
+      "bin_end": 3.6716548222352494,
+      "channels": 3,
+      "in_transit_median": 0.9840486248779294,
+      "out_of_transit_median": 1.0037669986744508,
+      "depth": 0.019644373467708143,
+      "uncertainty": 0.0001460613352050283
+    },
+    {
+      "bin_start": 3.6716548222352494,
+      "bin_center": 3.6866548222352495,
+      "bin_end": 3.7016548222352497,
+      "channels": 3,
+      "in_transit_median": 0.9844382987631419,
+      "out_of_transit_median": 1.003929920994346,
+      "depth": 0.01941532155142711,
+      "uncertainty": 0.00014511849870912675
+    },
+    {
+      "bin_start": 3.7016548222352488,
+      "bin_center": 3.716654822235249,
+      "bin_end": 3.731654822235249,
+      "channels": 2,
+      "in_transit_median": 0.985106969483414,
+      "out_of_transit_median": 1.004469467263907,
+      "depth": 0.019276342797392133,
+      "uncertainty": 0.0001646083593699921
+    },
+    {
+      "bin_start": 3.731654822235249,
+      "bin_center": 3.746654822235249,
+      "bin_end": 3.7616548222352493,
+      "channels": 3,
+      "in_transit_median": 0.9846756587793251,
+      "out_of_transit_median": 1.0041418703780738,
+      "depth": 0.019385917640720847,
+      "uncertainty": 0.0001567700397895639
+    },
+    {
+      "bin_start": 3.7616548222352484,
+      "bin_center": 3.7766548222352485,
+      "bin_end": 3.7916548222352486,
+      "channels": 3,
+      "in_transit_median": 0.9847237614465095,
+      "out_of_transit_median": 1.004213665523622,
+      "depth": 0.019408124731055083,
+      "uncertainty": 0.0001609769960220648
+    },
+    {
+      "bin_start": 3.7916548222352486,
+      "bin_center": 3.8066548222352488,
+      "bin_end": 3.821654822235249,
+      "channels": 3,
+      "in_transit_median": 0.9846329197138695,
+      "out_of_transit_median": 1.004289575119636,
+      "depth": 0.019572696852324534,
+      "uncertainty": 0.0001342658934910169
+    },
+    {
+      "bin_start": 3.821654822235248,
+      "bin_center": 3.836654822235248,
+      "bin_end": 3.8516548222352482,
+      "channels": 3,
+      "in_transit_median": 0.984809315942812,
+      "out_of_transit_median": 1.004230116874343,
+      "depth": 0.019338994723617883,
+      "uncertainty": 0.00017209159142250754
+    },
+    {
+      "bin_start": 3.8516548222352482,
+      "bin_center": 3.8666548222352484,
+      "bin_end": 3.8816548222352485,
+      "channels": 3,
+      "in_transit_median": 0.9850034882515593,
+      "out_of_transit_median": 1.0044496157364167,
+      "depth": 0.019359982999844545,
+      "uncertainty": 0.00015172888074876952
+    },
+    {
+      "bin_start": 3.8816548222352476,
+      "bin_center": 3.8966548222352477,
+      "bin_end": 3.911654822235248,
+      "channels": 3,
+      "in_transit_median": 0.9855337813476981,
+      "out_of_transit_median": 1.0044248912338207,
+      "depth": 0.018807887031669513,
+      "uncertainty": 0.00016172343519517635
+    },
+    {
+      "bin_start": 3.911654822235248,
+      "bin_center": 3.926654822235248,
+      "bin_end": 3.941654822235248,
+      "channels": 3,
+      "in_transit_median": 0.9855468298152794,
+      "out_of_transit_median": 1.004561518809707,
+      "depth": 0.01892834698362513,
+      "uncertainty": 0.0001550040591174595
+    },
+    {
+      "bin_start": 3.941654822235247,
+      "bin_center": 3.9566548222352473,
+      "bin_end": 3.9716548222352475,
+      "channels": 3,
+      "in_transit_median": 0.9853995619348952,
+      "out_of_transit_median": 1.0046156211949246,
+      "depth": 0.01912777270691173,
+      "uncertainty": 0.00017307028596568524
+    },
+    {
+      "bin_start": 3.9716548222352475,
+      "bin_center": 3.9866548222352476,
+      "bin_end": 4.001654822235247,
+      "channels": 3,
+      "in_transit_median": 0.9851556905351123,
+      "out_of_transit_median": 1.0047058129904771,
+      "depth": 0.019458554138523838,
+      "uncertainty": 0.0001749974964735949
+    },
+    {
+      "bin_start": 4.001654822235248,
+      "bin_center": 4.016654822235248,
+      "bin_end": 4.0316548222352475,
+      "channels": 3,
+      "in_transit_median": 0.9852633516400322,
+      "out_of_transit_median": 1.004494884740978,
+      "depth": 0.01914547639125602,
+      "uncertainty": 0.0001742213919781963
+    },
+    {
+      "bin_start": 4.0316548222352475,
+      "bin_center": 4.046654822235247,
+      "bin_end": 4.061654822235247,
+      "channels": 3,
+      "in_transit_median": 0.9854664140160234,
+      "out_of_transit_median": 1.0048570702979673,
+      "depth": 0.019296929737673104,
+      "uncertainty": 0.00018338666712858708
+    },
+    {
+      "bin_start": 4.061654822235249,
+      "bin_center": 4.076654822235248,
+      "bin_end": 4.091654822235248,
+      "channels": 3,
+      "in_transit_median": 0.9854789625561202,
+      "out_of_transit_median": 1.0048136417963542,
+      "depth": 0.01924205488061296,
+      "uncertainty": 0.00016978258192153518
+    },
+    {
+      "bin_start": 4.091654822235248,
+      "bin_center": 4.106654822235248,
+      "bin_end": 4.121654822235247,
+      "channels": 3,
+      "in_transit_median": 0.9857246014774986,
+      "out_of_transit_median": 1.0048741911248091,
+      "depth": 0.019056703631601238,
+      "uncertainty": 0.00018863977902904534
+    },
+    {
+      "bin_start": 4.121654822235249,
+      "bin_center": 4.136654822235249,
+      "bin_end": 4.1516548222352485,
+      "channels": 3,
+      "in_transit_median": 0.9854670355453512,
+      "out_of_transit_median": 1.0048514353992282,
+      "depth": 0.019290811726984824,
+      "uncertainty": 0.0001881559624142351
+    },
+    {
+      "bin_start": 4.1516548222352485,
+      "bin_center": 4.166654822235248,
+      "bin_end": 4.181654822235248,
+      "channels": 3,
+      "in_transit_median": 0.9856769072141676,
+      "out_of_transit_median": 1.0050070171526606,
+      "depth": 0.019233805942229357,
+      "uncertainty": 0.00018530090204169295
+    },
+    {
+      "bin_start": 4.18165482223525,
+      "bin_center": 4.196654822235249,
+      "bin_end": 4.211654822235249,
+      "channels": 3,
+      "in_transit_median": 0.9854257761701515,
+      "out_of_transit_median": 1.0049995669114025,
+      "depth": 0.01947641709081109,
+      "uncertainty": 0.00018640163901095666
+    },
+    {
+      "bin_start": 4.211654822235249,
+      "bin_center": 4.226654822235249,
+      "bin_end": 4.241654822235248,
+      "channels": 4,
+      "in_transit_median": 0.9849371527138973,
+      "out_of_transit_median": 1.0048433315425767,
+      "depth": 0.01981023131050748,
+      "uncertainty": 0.00018980759612681144
+    },
+    {
+      "bin_start": 4.24165482223525,
+      "bin_center": 4.25665482223525,
+      "bin_end": 4.2716548222352495,
+      "channels": 3,
+      "in_transit_median": 0.9848099778754235,
+      "out_of_transit_median": 1.0053896121191064,
+      "depth": 0.02046931258848624,
+      "uncertainty": 0.0001678288721441595
+    },
+    {
+      "bin_start": 4.2716548222352495,
+      "bin_center": 4.286654822235249,
+      "bin_end": 4.301654822235249,
+      "channels": 3,
+      "in_transit_median": 0.9850230081030784,
+      "out_of_transit_median": 1.0053594748097932,
+      "depth": 0.0202280549557284,
+      "uncertainty": 0.00019388493595385632
+    },
+    {
+      "bin_start": 4.301654822235251,
+      "bin_center": 4.31665482223525,
+      "bin_end": 4.33165482223525,
+      "channels": 3,
+      "in_transit_median": 0.9851315296146532,
+      "out_of_transit_median": 1.0055347743413812,
+      "depth": 0.020290938958418357,
+      "uncertainty": 0.0002059272198972856
+    },
+    {
+      "bin_start": 4.33165482223525,
+      "bin_center": 4.34665482223525,
+      "bin_end": 4.361654822235249,
+      "channels": 4,
+      "in_transit_median": 0.9846785818486663,
+      "out_of_transit_median": 1.0055110166366432,
+      "depth": 0.02071825613374163,
+      "uncertainty": 0.00021905069231707136
+    },
+    {
+      "bin_start": 4.361654822235251,
+      "bin_center": 4.376654822235251,
+      "bin_end": 4.3916548222352505,
+      "channels": 3,
+      "in_transit_median": 0.985049629464259,
+      "out_of_transit_median": 1.0055132936348445,
+      "depth": 0.02035146059244144,
+      "uncertainty": 0.00019258767941813748
+    },
+    {
+      "bin_start": 4.3916548222352505,
+      "bin_center": 4.40665482223525,
+      "bin_end": 4.42165482223525,
+      "channels": 3,
+      "in_transit_median": 0.9853242444336334,
+      "out_of_transit_median": 1.0057352151910184,
+      "depth": 0.020294576991130138,
+      "uncertainty": 0.00023579197732020508
+    },
+    {
+      "bin_start": 4.421654822235252,
+      "bin_center": 4.436654822235251,
+      "bin_end": 4.451654822235251,
+      "channels": 4,
+      "in_transit_median": 0.9851205757320461,
+      "out_of_transit_median": 1.0054595941207118,
+      "depth": 0.02022857856008868,
+      "uncertainty": 0.00019971297604640264
+    },
+    {
+      "bin_start": 4.451654822235251,
+      "bin_center": 4.466654822235251,
+      "bin_end": 4.48165482223525,
+      "channels": 3,
+      "in_transit_median": 0.9861008469942083,
+      "out_of_transit_median": 1.0057148925064978,
+      "depth": 0.019502590305097614,
+      "uncertainty": 0.00022103515846123436
+    },
+    {
+      "bin_start": 4.481654822235252,
+      "bin_center": 4.496654822235252,
+      "bin_end": 4.5116548222352515,
+      "channels": 3,
+      "in_transit_median": 0.986092576129106,
+      "out_of_transit_median": 1.0056441597672772,
+      "depth": 0.019441850726499305,
+      "uncertainty": 0.0002290924389169121
+    },
+    {
+      "bin_start": 4.5116548222352515,
+      "bin_center": 4.526654822235251,
+      "bin_end": 4.541654822235251,
+      "channels": 4,
+      "in_transit_median": 0.9860768678645826,
+      "out_of_transit_median": 1.0057641820104877,
+      "depth": 0.019574483261623834,
+      "uncertainty": 0.0002182023882537334
+    },
+    {
+      "bin_start": 4.541654822235253,
+      "bin_center": 4.556654822235252,
+      "bin_end": 4.571654822235252,
+      "channels": 3,
+      "in_transit_median": 0.9862142918826381,
+      "out_of_transit_median": 1.0057711037809098,
+      "depth": 0.019444595121845796,
+      "uncertainty": 0.0002582502450795106
+    },
+    {
+      "bin_start": 4.571654822235252,
+      "bin_center": 4.586654822235252,
+      "bin_end": 4.601654822235251,
+      "channels": 4,
+      "in_transit_median": 0.9863971206601823,
+      "out_of_transit_median": 1.0056727435379504,
+      "depth": 0.019166894003666304,
+      "uncertainty": 0.00025352854400231405
+    },
+    {
+      "bin_start": 4.601654822235253,
+      "bin_center": 4.616654822235253,
+      "bin_end": 4.6316548222352525,
+      "channels": 3,
+      "in_transit_median": 0.9865580847071984,
+      "out_of_transit_median": 1.0057555556209947,
+      "depth": 0.0190876111064015,
+      "uncertainty": 0.00027934767306901377
+    },
+    {
+      "bin_start": 4.6316548222352525,
+      "bin_center": 4.646654822235252,
+      "bin_end": 4.661654822235252,
+      "channels": 4,
+      "in_transit_median": 0.9866154570285812,
+      "out_of_transit_median": 1.0057553116360856,
+      "depth": 0.01903032913280775,
+      "uncertainty": 0.00023595655416948057
+    },
+    {
+      "bin_start": 4.661654822235254,
+      "bin_center": 4.676654822235253,
+      "bin_end": 4.691654822235253,
+      "channels": 4,
+      "in_transit_median": 0.9867860693828046,
+      "out_of_transit_median": 1.0057520535986266,
+      "depth": 0.018857514780070216,
+      "uncertainty": 0.00026319376044988275
+    },
+    {
+      "bin_start": 4.691654822235253,
+      "bin_center": 4.706654822235253,
+      "bin_end": 4.721654822235252,
+      "channels": 3,
+      "in_transit_median": 0.9865546701053876,
+      "out_of_transit_median": 1.0058113706751795,
+      "depth": 0.01914543932513438,
+      "uncertainty": 0.0002923572732309744
+    },
+    {
+      "bin_start": 4.721654822235254,
+      "bin_center": 4.736654822235254,
+      "bin_end": 4.7516548222352535,
+      "channels": 4,
+      "in_transit_median": 0.9866319431290805,
+      "out_of_transit_median": 1.0060897319751665,
+      "depth": 0.019340013348398067,
+      "uncertainty": 0.0002615741779195497
+    },
+    {
+      "bin_start": 4.7516548222352535,
+      "bin_center": 4.766654822235253,
+      "bin_end": 4.781654822235253,
+      "channels": 3,
+      "in_transit_median": 0.9868745781361407,
+      "out_of_transit_median": 1.0062083113110702,
+      "depth": 0.01921444392537178,
+      "uncertainty": 0.0003031190466979394
+    },
+    {
+      "bin_start": 4.781654822235255,
+      "bin_center": 4.796654822235254,
+      "bin_end": 4.811654822235254,
+      "channels": 4,
+      "in_transit_median": 0.9867158128360853,
+      "out_of_transit_median": 1.0057698448782717,
+      "depth": 0.018944723923883872,
+      "uncertainty": 0.0002762486872015937
+    },
+    {
+      "bin_start": 4.811654822235254,
+      "bin_center": 4.826654822235254,
+      "bin_end": 4.841654822235253,
+      "channels": 4,
+      "in_transit_median": 0.9868298991227353,
+      "out_of_transit_median": 1.0059940603603725,
+      "depth": 0.01904997454037861,
+      "uncertainty": 0.00030880913568698986
+    },
+    {
+      "bin_start": 4.841654822235255,
+      "bin_center": 4.856654822235255,
+      "bin_end": 4.8716548222352545,
+      "channels": 3,
+      "in_transit_median": 0.9869458921226252,
+      "out_of_transit_median": 1.0059863822144044,
+      "depth": 0.018927184729744327,
+      "uncertainty": 0.0002858342537011263
+    },
+    {
+      "bin_start": 4.8716548222352545,
+      "bin_center": 4.886654822235254,
+      "bin_end": 4.901654822235254,
+      "channels": 4,
+      "in_transit_median": 0.9866749755283619,
+      "out_of_transit_median": 1.0058419913789036,
+      "depth": 0.019055692658312803,
+      "uncertainty": 0.00027993479943327773
+    },
+    {
+      "bin_start": 4.901654822235256,
+      "bin_center": 4.916654822235255,
+      "bin_end": 4.931654822235255,
+      "channels": 4,
+      "in_transit_median": 0.9870518235497021,
+      "out_of_transit_median": 1.006038437339182,
+      "depth": 0.01887265246017493,
+      "uncertainty": 0.00028436028653290975
+    },
+    {
+      "bin_start": 4.931654822235255,
+      "bin_center": 4.946654822235255,
+      "bin_end": 4.961654822235254,
+      "channels": 4,
+      "in_transit_median": 0.9868877401552527,
+      "out_of_transit_median": 1.0058443184215369,
+      "depth": 0.01884643370659245,
+      "uncertainty": 0.00028574917505194003
+    },
+    {
+      "bin_start": 4.961654822235256,
+      "bin_center": 4.976654822235256,
+      "bin_end": 4.9916548222352555,
+      "channels": 4,
+      "in_transit_median": 0.9871025930539601,
+      "out_of_transit_median": 1.0058073814608885,
+      "depth": 0.018596789754873964,
+      "uncertainty": 0.00032278387425187845
+    },
+    {
+      "bin_start": 4.9916548222352555,
+      "bin_center": 5.006654822235255,
+      "bin_end": 5.021654822235255,
+      "channels": 3,
+      "in_transit_median": 0.9873198739079154,
+      "out_of_transit_median": 1.0060732517651356,
+      "depth": 0.01864017140334242,
+      "uncertainty": 0.00034113651828795956
+    },
+    {
+      "bin_start": 5.021654822235257,
+      "bin_center": 5.036654822235256,
+      "bin_end": 5.051654822235256,
+      "channels": 4,
+      "in_transit_median": 0.9873880302004848,
+      "out_of_transit_median": 1.0060476997907175,
+      "depth": 0.01854749987909555,
+      "uncertainty": 0.0003007570563914232
+    },
+    {
+      "bin_start": 5.051654822235256,
+      "bin_center": 5.066654822235256,
+      "bin_end": 5.081654822235255,
+      "channels": 4,
+      "in_transit_median": 0.9872076279817774,
+      "out_of_transit_median": 1.0058530943171677,
+      "depth": 0.018536967715000137,
+      "uncertainty": 0.00033862709946727923
+    },
+    {
+      "bin_start": 5.081654822235257,
+      "bin_center": 5.096654822235257,
+      "bin_end": 5.1116548222352565,
+      "channels": 4,
+      "in_transit_median": 0.9873443202241177,
+      "out_of_transit_median": 1.0059753884704952,
+      "depth": 0.018520401651877932,
+      "uncertainty": 0.00037001364177196466
+    },
+    {
+      "bin_start": 5.1116548222352565,
+      "bin_center": 5.126654822235256,
+      "bin_end": 5.141654822235256,
+      "channels": 4,
+      "in_transit_median": 0.9870082031285923,
+      "out_of_transit_median": 1.0061038435268976,
+      "depth": 0.01897979072554338,
+      "uncertainty": 0.00029614868919647125
+    },
+    {
+      "bin_start": 5.141654822235258,
+      "bin_center": 5.156654822235257,
+      "bin_end": 5.171654822235257,
+      "channels": 4,
+      "in_transit_median": 0.9870902558994997,
+      "out_of_transit_median": 1.0060000929715325,
+      "depth": 0.018797053006403507,
+      "uncertainty": 0.0003532118529829735
+    },
+    {
+      "bin_start": 5.171654822235257,
+      "bin_center": 5.186654822235257,
+      "bin_end": 5.201654822235256,
+      "channels": 4,
+      "in_transit_median": 0.9876691972778098,
+      "out_of_transit_median": 1.0059409016880503,
+      "depth": 0.01816379508933289,
+      "uncertainty": 0.00037959701302133154
+    },
+    {
+      "bin_start": 5.201654822235258,
+      "bin_center": 5.216654822235258,
+      "bin_end": 5.2316548222352575,
+      "channels": 4,
+      "in_transit_median": 0.9873740223853155,
+      "out_of_transit_median": 1.0062725564398085,
+      "depth": 0.01878073086019164,
+      "uncertainty": 0.00034219847837732234
+    },
+    {
+      "bin_start": 5.2316548222352575,
+      "bin_center": 5.246654822235257,
+      "bin_end": 5.261654822235257,
+      "channels": 4,
+      "in_transit_median": 0.9871349248804852,
+      "out_of_transit_median": 1.0062334649822469,
+      "depth": 0.018980227518172105,
+      "uncertainty": 0.00037970483880335584
+    },
+    {
+      "bin_start": 5.261654822235259,
+      "bin_center": 5.276654822235258,
+      "bin_end": 5.291654822235258,
+      "channels": 4,
+      "in_transit_median": 0.9870712727137079,
+      "out_of_transit_median": 1.0061584638439913,
+      "depth": 0.01897036283664657,
+      "uncertainty": 0.0003614483600436221
+    },
+    {
+      "bin_start": 5.291654822235258,
+      "bin_center": 5.306654822235258,
+      "bin_end": 5.321654822235257,
+      "channels": 4,
+      "in_transit_median": 0.9874576632131702,
+      "out_of_transit_median": 1.0062591973626054,
+      "depth": 0.018684583652714745,
+      "uncertainty": 0.0005177821330346171
+    }
+  ],
+  "transit": {
+    "midpoint": 59770.83564739978,
+    "start": 59770.777247399776,
+    "end": 59770.89404739978,
+    "duration_hours": 2.8032
+  },
+  "analysis": {
+    "bin_width": 0.03,
+    "ephemeris_reference": "<a refstr=CARTER_ET_AL__2024 href=https://ui.adsabs.harvard.edu/abs/2024NatAs...8.1008C/abstract target=ref>Carter et al. 2024</a>",
+    "ephemeris_time_system": "BJD-TDB",
+    "duration_source": "PSCompPars fallback"
+  }
+}
