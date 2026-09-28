@@ -42,11 +42,17 @@ class MastApiFetcher(DataFetcher):
         return pd_product
 
     def _filter_object(self, filtered_df: pd.DataFrame):
+        filenames = filtered_df["productFilename"].fillna("").str.lower()
+
         filtered_df = filtered_df[
-            filtered_df["productFilename"].str.endswith(
-                "x1dints.fits"
-            )
-        ]
+            filenames.str.endswith("x1dints.fits")
+            & filenames.str.contains("_nis_")
+            & filenames.str.contains("-seg")
+        ].copy()
+
+        if filtered_df.empty:
+            raise ValueError("No segmented NIRISS/SOSS x1dints products found")
+
         return filtered_df
 
     # def _get_observation_file(self, obs_id):
@@ -81,50 +87,78 @@ class MastApiFetcher(DataFetcher):
     def get_data(self, target_name: str) -> pd.DataFrame:
         step0 = self._search_object(target_name)
         step1 = self._filter_mission(step0)
-        step2 = self._get_product_filename(step1)
+        soss_observations = self._filter_niriss_soss(step1)
+
+        step2 = self._get_product_filename(soss_observations)
         step3 = self._filter_object(step2)
 
-        segmented_files = step3[
-            step3["productFilename"].str.contains("-seg", na=False)
+        first_filename = step3.iloc[0]["productFilename"]
+        exposure_prefix = first_filename.split("-seg")[0]
+
+        selected_products = step3[
+            step3["productFilename"].str.startswith(exposure_prefix)
         ].copy()
 
-        if segmented_files.empty:
-            raise ValueError(f"No segmented x1dints files found for {target_name}")
+        selected_products["segment_number"] = selected_products[
+            "productFilename"
+        ].apply(self._get_segment_number)
 
-        first_filename = segmented_files.iloc[0]["productFilename"]
-        exposure_prefix = first_filename.partition("-seg")[0]
+        selected_products = selected_products.sort_values("segment_number")
 
-        exposure_files = segmented_files[
-            segmented_files["productFilename"].str.startswith(exposure_prefix + "-seg")
-        ].copy()
-
-        exposure_files["segment_number"] = exposure_files["productFilename"].apply(self._get_segment_number)
-        exposure_files = exposure_files.sort_values("segment_number")
-
-        print(exposure_files[["productFilename", "segment_number"]])
+        print(
+            selected_products[
+                ["productFilename", "segment_number"]
+            ].to_string(index=False)
+        )
 
         dataframes = []
 
-        for _, row in exposure_files.iterrows():
+        for _, row in selected_products.iterrows():
             product_filename = row["productFilename"]
 
             local_path = self._download_product(row)
 
-            print(f"Reading: {product_filename}")
+            print(f"Reading {product_filename}")
 
             table = Table.read(local_path, hdu="EXTRACT1D")
-            segment_df = table.to_pandas()
+            dataframe = table.to_pandas()
 
-            dataframes.append(segment_df)
+            dataframes.append(dataframe)
 
         if not dataframes:
-            raise ValueError(f"No FITS data loaded for {target_name}")
+            raise ValueError("No NIRISS/SOSS data could be loaded")
 
         fits_data = pd.concat(dataframes, ignore_index=True)
 
         if "TDB-MID" in fits_data.columns:
             fits_data = fits_data.sort_values("TDB-MID").reset_index(drop=True)
 
-        print("Combined integrations:", len(fits_data))
+        print(f"Combined integrations: {len(fits_data)}")
 
         return fits_data
+    def _filter_niriss_soss(self, object_data):
+        required_columns = ["instrument_name"]
+
+        for column in required_columns:
+            if column not in object_data.colnames:
+                raise ValueError(f"MAST observation table does not contain '{column}'")
+
+        mask = []
+
+        for row in object_data:
+            instrument = str(row["instrument_name"]).upper()
+            filters = str(row["filters"]).upper() if "filters" in object_data.colnames else ""
+
+            is_niriss = "NIRISS" in instrument
+            is_soss = "GR700XD" in instrument or "GR700XD" in filters
+
+            mask.append(is_niriss and is_soss)
+
+        filtered = object_data[mask]
+
+        if len(filtered) == 0:
+            raise ValueError("No JWST NIRISS/SOSS observations found for this target")
+
+        print(f"Found {len(filtered)} NIRISS/SOSS observations")
+
+        return filtered

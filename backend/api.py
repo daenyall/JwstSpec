@@ -40,7 +40,6 @@ def run_analysis(target: str = target_name):
     print(f"No cached data for {target}. Running analysis")
 
     fits_data = fetcher.get_data(target)
-    print("\n=== SNR BY WAVELENGTH BIN ===")
 
     bin_width = 0.03
 
