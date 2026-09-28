@@ -2,19 +2,26 @@ import pandas as pd
 from abc import ABC, abstractmethod
 from pathlib import Path
 from astropy.table import Table
-from astroquery.exceptions import ResolverError
+from astroquery.exceptions import ResolverError, RemoteServiceError
 from astroquery.mast import Observations
 
+class MastServiceUnavailableError(Exception):
+    pass
+
 class DataFetcher(ABC):
+
 
     @abstractmethod
     def get_data(self, target_name: str) -> pd.DataFrame:
         pass
 
+
 class LocalFitsFetcher(DataFetcher):
+
 
     def __init__(self, base_path: str):
         self.base_path = base_path
+
 
     def get_data(self, target_name: str) -> pd.DataFrame:
         file_path = Path(self.base_path) / f"{target_name}.fits"
@@ -22,7 +29,9 @@ class LocalFitsFetcher(DataFetcher):
         fits_data = load_fits.to_pandas()
         return fits_data
 
+
 class MastApiFetcher(DataFetcher):
+
 
     def __init__(self, base_path: str):
         self.base_path = base_path
@@ -30,9 +39,15 @@ class MastApiFetcher(DataFetcher):
     def _search_object(self, target_name: str):
         try:
             object_data = Observations.query_object(target_name)
+
         except ResolverError as error:
             raise ValueError(
                 f"No MAST observations found for target '{target_name}'"
+            ) from error
+
+        except RemoteServiceError as error:
+            raise MastServiceUnavailableError(
+                "MAST is temporarily unavailable. Please try again later."
             ) from error
 
         if len(object_data) == 0:
@@ -48,10 +63,12 @@ class MastApiFetcher(DataFetcher):
         ]
         return filter_mission
 
+
     def _get_product_filename(self, object_data):
         product_filename = Observations.get_product_list(object_data)
         pd_product = product_filename.to_pandas()
         return pd_product
+
 
     def _filter_object(self, filtered_df: pd.DataFrame):
         filenames = filtered_df["productFilename"].fillna("").str.lower()
@@ -68,9 +85,6 @@ class MastApiFetcher(DataFetcher):
 
         return filtered_df
 
-    # def _get_observation_file(self, obs_id):
-    #     observation_file = Observations.download_products(obs_id)
-    #     return observation_file
 
     def _download_product(self, product_row):
         filename = str(product_row["productFilename"])
@@ -92,11 +106,42 @@ class MastApiFetcher(DataFetcher):
 
         return local_path
 
+
     def _get_segment_number(self, filename: str) -> int:
         segment_part = filename.partition("-seg")[2]
         segment_number = segment_part[:3]
 
         return int(segment_number)
+
+
+    def _filter_niriss_soss(self, object_data):
+        required_columns = ["instrument_name"]
+
+        for column in required_columns:
+            if column not in object_data.colnames:
+                raise ValueError(f"MAST observation table does not contain '{column}'")
+
+        mask = []
+
+        for row in object_data:
+            instrument = str(row["instrument_name"]).upper()
+            filters = str(row["filters"]).upper() if "filters" in object_data.colnames else ""
+
+            is_niriss = "NIRISS" in instrument
+            is_soss = "GR700XD" in instrument or "GR700XD" in filters
+
+            mask.append(is_niriss and is_soss)
+
+        filtered = object_data[mask]
+
+        if len(filtered) == 0:
+            raise ValueError("No JWST NIRISS/SOSS observations found for this target")
+
+        print(f"Found {len(filtered)} NIRISS/SOSS observations")
+
+        return filtered
+
+    
     def get_data(self, target_name: str) -> pd.DataFrame:
         step0 = self._search_object(target_name)
         step1 = self._filter_mission(step0)
@@ -149,29 +194,3 @@ class MastApiFetcher(DataFetcher):
         print(f"Combined integrations: {len(fits_data)}")
 
         return fits_data
-    def _filter_niriss_soss(self, object_data):
-        required_columns = ["instrument_name"]
-
-        for column in required_columns:
-            if column not in object_data.colnames:
-                raise ValueError(f"MAST observation table does not contain '{column}'")
-
-        mask = []
-
-        for row in object_data:
-            instrument = str(row["instrument_name"]).upper()
-            filters = str(row["filters"]).upper() if "filters" in object_data.colnames else ""
-
-            is_niriss = "NIRISS" in instrument
-            is_soss = "GR700XD" in instrument or "GR700XD" in filters
-
-            mask.append(is_niriss and is_soss)
-
-        filtered = object_data[mask]
-
-        if len(filtered) == 0:
-            raise ValueError("No JWST NIRISS/SOSS observations found for this target")
-
-        print(f"Found {len(filtered)} NIRISS/SOSS observations")
-
-        return filtered

@@ -1,26 +1,7 @@
 import numpy as np
+
 class DataAnalyzer:
 
-    def calculate_transit_depth(self, lightcurve_data_df, transit_start, transit_end, gases):
-        in_transit_mask = (
-        (lightcurve_data_df["TDB-MID"] >= transit_start) & 
-        (lightcurve_data_df["TDB-MID"] <= transit_end))
-
-        in_transit = lightcurve_data_df[in_transit_mask]
-        out_of_transit = lightcurve_data_df[~in_transit_mask]
-        print(f"ROWS IN:{len(in_transit.index)} ")
-        print(f"ROWS OUT:{len(out_of_transit.index)} ")
-
-        results = {}
-        
-        for gas in gases.keys():
-
-            if gas in lightcurve_data_df.columns:
-                in_transit_median = np.nanmedian(in_transit[gas])
-                out_of_transit_median = np.nanmedian(out_of_transit[gas])
-                depth = (out_of_transit_median - in_transit_median) / out_of_transit_median
-                results[gas] = {"in_transit_median": in_transit_median, "out_of_transit_median": out_of_transit_median, "depth": depth}
-        return results
 
     def calculate_binned_spectrum(self, bins, tdb_mid, transit_start, transit_end):
         times = np.asarray(tdb_mid, dtype=float)
@@ -54,9 +35,7 @@ class DataAnalyzer:
 
             if detrended_lightcurve is None:
                 continue
-            if detrended_lightcurve is None:
-                continue
-
+   
             temporal_quality = self.classify_temporal_quality(
                 detrended_lightcurve,
                 times,
@@ -162,76 +141,114 @@ class DataAnalyzer:
 
         return detrended
 
-    def classify_temporal_quality(self, detrended, times, transit_start, transit_end):
-            pre_mask = times < transit_start
-            post_mask = times > transit_end
-            out_mask = pre_mask | post_mask
 
-            pre_flux = detrended[pre_mask]
-            post_flux = detrended[post_mask]
-            out_flux = detrended[out_mask]
-
-            pre_flux = pre_flux[np.isfinite(pre_flux)]
-            post_flux = post_flux[np.isfinite(post_flux)]
-            out_flux = out_flux[np.isfinite(out_flux)]
-
-            if len(pre_flux) == 0 or len(post_flux) == 0 or len(out_flux) == 0:
-                return {
-                    "status": "rejected",
-                    "oot_scatter": None,
-                    "baseline_mismatch": None,
-                    "reasons": ["insufficient baseline data"]
-                }
-
-            out_median = np.nanmedian(out_flux)
-
-            mad = np.nanmedian(
-                np.abs(out_flux - out_median)
-            )
-
-            oot_scatter = 1.4826 * mad
-
-            pre_median = np.nanmedian(pre_flux)
-            post_median = np.nanmedian(post_flux)
-
-            baseline_mismatch = abs(
-                pre_median - post_median
-            )
-
-            reasons = []
-
-            if oot_scatter >= 0.002:
-                reasons.append("OOT scatter >= 0.20%")
-
-            if baseline_mismatch >= 0.0005:
-                reasons.append("baseline mismatch >= 0.05%")
-
-            if reasons:
-                status = "rejected"
-            elif oot_scatter >= 0.001 or baseline_mismatch >= 0.0002:
-                status = "caution"
-
-                if oot_scatter >= 0.001:
-                    reasons.append("OOT scatter >= 0.10%")
-
-                if baseline_mismatch >= 0.0002:
-                    reasons.append("baseline mismatch >= 0.02%")
-            else:
-                status = "valid"
-
-            return {
-                "status": status,
-                "oot_scatter": float(oot_scatter),
-                "baseline_mismatch": float(baseline_mismatch),
-                "reasons": reasons
-            }
-
-    def evaluate_dataset_quality(self, bins, times, transit_start, transit_end):
+    def _calculate_temporal_metrics(
+        self,
+        detrended,
+        times,
+        transit_start,
+        transit_end
+    ):
         times = np.asarray(times, dtype=float)
+        detrended = np.asarray(detrended, dtype=float)
 
         pre_mask = times < transit_start
         post_mask = times > transit_end
         out_mask = pre_mask | post_mask
+
+        pre_flux = detrended[pre_mask]
+        post_flux = detrended[post_mask]
+        out_flux = detrended[out_mask]
+
+        pre_flux = pre_flux[np.isfinite(pre_flux)]
+        post_flux = post_flux[np.isfinite(post_flux)]
+        out_flux = out_flux[np.isfinite(out_flux)]
+
+        if len(pre_flux) == 0 or len(post_flux) == 0 or len(out_flux) == 0:
+            return None
+
+        out_median = np.nanmedian(out_flux)
+
+        mad = np.nanmedian(
+            np.abs(out_flux - out_median)
+        )
+
+        oot_scatter = 1.4826 * mad
+
+        pre_median = np.nanmedian(pre_flux)
+        post_median = np.nanmedian(post_flux)
+
+        baseline_mismatch = abs(
+            pre_median - post_median
+        )
+
+        return {
+            "oot_scatter": oot_scatter,
+            "baseline_mismatch": baseline_mismatch
+        }
+
+    def classify_temporal_quality(
+        self,
+        detrended,
+        times,
+        transit_start,
+        transit_end
+    ):
+        metrics = self._calculate_temporal_metrics(
+            detrended,
+            times,
+            transit_start,
+            transit_end
+        )
+
+        if metrics is None:
+            return {
+                "status": "rejected",
+                "oot_scatter": None,
+                "baseline_mismatch": None,
+                "reasons": ["insufficient baseline data"]
+            }
+
+        oot_scatter = metrics["oot_scatter"]
+        baseline_mismatch = metrics["baseline_mismatch"]
+
+        reasons = []
+
+        if oot_scatter >= 0.002:
+            reasons.append("OOT scatter >= 0.20%")
+
+        if baseline_mismatch >= 0.0005:
+            reasons.append("baseline mismatch >= 0.05%")
+
+        if reasons:
+            status = "rejected"
+
+        elif oot_scatter >= 0.001 or baseline_mismatch >= 0.0002:
+            status = "caution"
+
+            if oot_scatter >= 0.001:
+                reasons.append("OOT scatter >= 0.10%")
+
+            if baseline_mismatch >= 0.0002:
+                reasons.append("baseline mismatch >= 0.02%")
+
+        else:
+            status = "valid"
+
+        return {
+            "status": status,
+            "oot_scatter": float(oot_scatter),
+            "baseline_mismatch": float(baseline_mismatch),
+            "reasons": reasons
+        }
+    def evaluate_dataset_quality(
+        self,
+        bins,
+        times,
+        transit_start,
+        transit_end
+    ):
+        times = np.asarray(times, dtype=float)
 
         scatter_values = []
         mismatch_values = []
@@ -254,34 +271,21 @@ class DataAnalyzer:
             if detrended is None:
                 continue
 
-            pre_flux = detrended[pre_mask]
-            post_flux = detrended[post_mask]
-            out_flux = detrended[out_mask]
+            metrics = self._calculate_temporal_metrics(
+                detrended,
+                times,
+                transit_start,
+                transit_end
+            )
 
-            pre_flux = pre_flux[np.isfinite(pre_flux)]
-            post_flux = post_flux[np.isfinite(post_flux)]
-            out_flux = out_flux[np.isfinite(out_flux)]
-
-            if len(pre_flux) == 0 or len(post_flux) == 0 or len(out_flux) == 0:
+            if metrics is None:
                 continue
 
-            out_median = np.nanmedian(out_flux)
+            oot_scatter = metrics["oot_scatter"]
+            baseline_mismatch = metrics["baseline_mismatch"]
 
-            mad = np.nanmedian(
-                np.abs(out_flux - out_median)
-            )
-
-            robust_scatter = 1.4826 * mad
-
-            pre_median = np.nanmedian(pre_flux)
-            post_median = np.nanmedian(post_flux)
-
-            baseline_mismatch = abs(
-                pre_median - post_median
-            )
-
-            if np.isfinite(robust_scatter):
-                scatter_values.append(robust_scatter)
+            if np.isfinite(oot_scatter):
+                scatter_values.append(oot_scatter)
 
             if np.isfinite(baseline_mismatch):
                 mismatch_values.append(baseline_mismatch)
@@ -298,8 +302,13 @@ class DataAnalyzer:
         scatter_values = np.asarray(scatter_values, dtype=float)
         mismatch_values = np.asarray(mismatch_values, dtype=float)
 
-        median_scatter = float(np.nanmedian(scatter_values))
-        median_mismatch = float(np.nanmedian(mismatch_values))
+        median_scatter = float(
+            np.nanmedian(scatter_values)
+        )
+
+        median_mismatch = float(
+            np.nanmedian(mismatch_values)
+        )
 
         reasons = []
 
@@ -311,6 +320,7 @@ class DataAnalyzer:
 
         if reasons:
             status = "poor"
+
         elif median_scatter >= 0.0025 or median_mismatch >= 0.0005:
             status = "caution"
 
@@ -319,6 +329,7 @@ class DataAnalyzer:
 
             if median_mismatch >= 0.0005:
                 reasons.append("median baseline mismatch >= 0.05%")
+
         else:
             status = "good"
 
@@ -329,14 +340,3 @@ class DataAnalyzer:
             "bins_evaluated": len(scatter_values),
             "reasons": reasons
         }
-
-
-
-
-
-
-            
-
-
-
-            

@@ -57,6 +57,15 @@ def run_analysis(target: str = target_name):
     try:
         fits_data = fetcher.get_data(target)
 
+    except MastServiceUnavailableError as error:
+        raise HTTPException(
+            status_code=503,
+            detail={
+                "code": "mast_unavailable",
+                "message": str(error)
+            }
+        ) from error
+
     except ValueError as error:
         message = str(error)
 

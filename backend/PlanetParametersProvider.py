@@ -13,7 +13,7 @@ class PlanetParametersProvider:
         query = (
             "select pl_name,pl_tranmid,pl_tranmiderr1,pl_tranmiderr2,"
             "pl_orbper,pl_orbpererr1,pl_orbpererr2,"
-            "pl_trandur,pl_tsystemref,pl_refname "
+            "pl_trandur,pl_tsystemref,pl_refname,default_flag "
             f"from ps where pl_name='{safe_target}'"
         )
 
@@ -46,11 +46,10 @@ class PlanetParametersProvider:
 
         tobs_jd = tobs + 2400000.5
 
-        best_row = min(
-            candidates,
-            key=lambda row: self._calculate_ephemeris_score(row, tobs_jd)
-        )
-
+        best_row = self._select_best_ephemeris(
+        candidates,
+        tobs_jd)
+        
         if best_row["pl_trandur"] is not None:
             duration_hours = float(best_row["pl_trandur"])
             duration_source = "PS"
@@ -82,6 +81,40 @@ class PlanetParametersProvider:
             raise ValueError("No transit duration available in PSCompPars")
 
         return float(duration)
+
+    def _select_best_ephemeris(self, candidates, tobs_jd):
+        scored_candidates = []
+
+        for row in candidates:
+            score = self._calculate_ephemeris_score(
+                row,
+                tobs_jd
+            )
+
+            if math.isfinite(score):
+                scored_candidates.append(
+                    (score, row)
+                )
+
+        if scored_candidates:
+            _, best_row = min(
+                scored_candidates,
+                key=lambda item: item[0]
+            )
+
+            return best_row
+
+        default_candidates = [
+            row
+            for row in candidates
+            if row.get("default_flag") == 1
+        ]
+
+        if default_candidates:
+            return default_candidates[0]
+
+        return candidates[0]
+
 
     def _calculate_ephemeris_score(self, row, tobs_jd):
         t0 = float(row["pl_tranmid"])

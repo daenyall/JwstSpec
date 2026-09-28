@@ -1,8 +1,33 @@
-../.idea/
+# IDE
+.idea/
+.vscode/
+
+# Python virtual environments
 .venv/
-jwst_data/
-*.fits
-*.csv
-*.jpg
+venv/
+
+# Python cache
 __pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# JWST downloaded data
+jwst_data/
 mastDownload/
+*.fits
+
+# Generated analysis data
+analysis_cache/
+diagnostics/
+
+# Local data / exports
+*.csv
+
+# Images generated during diagnostics
+*.jpg
+*.png
+
+# OS files
+.DS_Store
+Thumbs.db

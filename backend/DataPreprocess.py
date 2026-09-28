@@ -84,8 +84,10 @@ class DataPreprocessor:
             "quality_status": quality_status,
             "quality_reasons": quality_reasons
         }
+
+    
     def extract_all_bins(self, raw_table, bin_width: float = 0.03):
-        waves = np.array(raw_table["WAVELENGTH"][0], dtype=float)
+        waves = np.asarray(raw_table["WAVELENGTH"].iloc[0], dtype=float)
         valid_waves = waves[np.isfinite(waves)]
 
         min_wave = np.min(valid_waves)
@@ -106,6 +108,8 @@ class DataPreprocessor:
             bin_start = bin_end
 
         return bins
+
+    
     def _classify_bin_quality(self, median_flux, median_snr, negative_fraction):
         rejected_reasons = []
 
@@ -133,7 +137,6 @@ class DataPreprocessor:
 
         if caution_reasons:
             return "caution", caution_reasons
-
         return "valid", []
 
         

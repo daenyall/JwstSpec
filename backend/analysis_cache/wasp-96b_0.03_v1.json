@@ -1108,9 +1108,17 @@
     "duration_hours": 2.4264
   },
   "analysis": {
+    "status": "success",
     "bin_width": 0.03,
+    "dataset_quality": {
+      "status": "good",
+      "median_oot_scatter": 0.0006936361507023532,
+      "median_baseline_mismatch": 6.50460620922888e-05,
+      "bins_evaluated": 66,
+      "reasons": []
+    },
     "ephemeris_reference": "<a refstr=KOKORI_ET_AL__2023 href=https://ui.adsabs.harvard.edu/abs/2023ApJS..265....4K/abstract target=ref>Kokori et al. 2023</a>",
-    "ephemeris_time_system": "BJD-TDB",
+    "time_system": "BJD-TDB",
     "duration_source": "PSCompPars fallback"
   }
 }
