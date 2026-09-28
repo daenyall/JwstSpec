@@ -85,6 +85,7 @@ export default function Home() {
   const analyzeTarget = useCallback(async (targetName: string) => {
     setLoading(true);
     setError(null);
+    setData(null);
 
     try {
       const response = await fetch(

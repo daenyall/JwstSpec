@@ -2,6 +2,7 @@ import pandas as pd
 from abc import ABC, abstractmethod
 from pathlib import Path
 from astropy.table import Table
+from astroquery.exceptions import ResolverError
 from astroquery.mast import Observations
 
 class DataFetcher(ABC):
@@ -27,7 +28,12 @@ class MastApiFetcher(DataFetcher):
         self.base_path = base_path
 
     def _search_object(self, target_name: str):
-        object_data = Observations.query_object(target_name)
+        try:
+            object_data = Observations.query_object(target_name)
+        except ResolverError as error:
+            raise ValueError(
+                f"No MAST observations found for target '{target_name}'"
+            ) from error
 
         if len(object_data) == 0:
             raise ValueError(
