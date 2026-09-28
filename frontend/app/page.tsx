@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useState } from "react";
 import {
   CartesianGrid,
   ErrorBar,
@@ -123,9 +123,6 @@ export default function Home() {
     }
   }, []);
 
-  useEffect(() => {
-    void analyzeTarget("WASP-96b");
-  }, [analyzeTarget]);
 
   const spectrumChartData = data
     ? data.spectrum.reduce<

@@ -3,7 +3,7 @@ from fastapi.middleware.cors import CORSMiddleware
 
 from DataPreprocess import DataPreprocessor
 from DataAnalyzer import DataAnalyzer
-from DataFetch import MastApiFetcher
+from DataFetch import MastApiFetcher, MastServiceUnavailableError
 from TransitCalculator import TransitCalculator
 from PlanetParametersProvider import PlanetParametersProvider
 from cache.AnalysisCache import AnalysisCache
