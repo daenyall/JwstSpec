@@ -28,6 +28,12 @@ class MastApiFetcher(DataFetcher):
 
     def _search_object(self, target_name: str):
         object_data = Observations.query_object(target_name)
+
+        if len(object_data) == 0:
+            raise ValueError(
+                f"No MAST observations found for target '{target_name}'"
+            )
+
         return object_data
 
     def _filter_mission(self, object_data):
@@ -52,6 +58,7 @@ class MastApiFetcher(DataFetcher):
 
         if filtered_df.empty:
             raise ValueError("No segmented NIRISS/SOSS x1dints products found")
+        
 
         return filtered_df
 
