@@ -72,13 +72,46 @@ if backend_status.returncode != 0:
         ["git", "status", "--porcelain", "--", "backend"],
         ROOT,
     ))
+
 elif backend_status.stdout.strip():
+    python = ROOT / "backend" / ".venv" / "bin" / "python"
+
+    if not python.is_file():
+        worktrees = subprocess.run(
+            ["git", "worktree", "list", "--porcelain"],
+            cwd=ROOT,
+            capture_output=True,
+            text=True,
+            timeout=10,
+        )
+
+        main_root = next(
+            (
+                Path(line[len("worktree "):])
+                for line in worktrees.stdout.splitlines()
+                if line.startswith("worktree ")
+            ),
+            ROOT,
+        )
+
+        candidate = main_root / "backend" / ".venv" / "bin" / "python"
+
+        current_requirements = ROOT / "backend" / "requirements.txt"
+        main_requirements = main_root / "backend" / "requirements.txt"
+
+        if (
+            worktrees.returncode == 0
+            and candidate.is_file()
+            and current_requirements.is_file()
+            and main_requirements.is_file()
+            and current_requirements.read_bytes()
+            == main_requirements.read_bytes()
+        ):
+            python = candidate
+
     checks.append((
         "Backend pytest",
-        [
-            str(ROOT / "backend" / ".venv" / "bin" / "python"),
-            "-m", "pytest", "tests", "-q",
-        ],
+        [str(python), "-m", "pytest", "tests", "-q"],
         ROOT / "backend",
     ))
 
