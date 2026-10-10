@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "hooks": {
+    "Stop": [
+      {
+        "type": "command",
+        "bash": "python3 .github/hooks/jwstspec-final-check.py",
+        "timeoutSec": 125
+      }
+    ]
+  }
+}
