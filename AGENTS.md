@@ -63,3 +63,20 @@ Do not claim success based solely on code generation.
   - Any remaining issues or risks.
 
 Prioritize verified, working code over confident-sounding explanations.
+
+## Project Verification Commands
+
+Use the repository's verification script whenever possible:
+
+- Backend: `./scripts/verify-worktree.sh backend`
+- Frontend: `./scripts/verify-worktree.sh frontend`
+- Full verification: `./scripts/verify-worktree.sh all`
+
+Guidelines:
+- Run checks relevant to the files you changed.
+- Use full verification for changes affecting both frontend and backend.
+- Investigate failed checks and fix issues caused by your changes.
+- The script may create local environments and install dependencies.
+- Never install packages globally without explicit permission.
+- Do not claim that checks passed unless they were executed.
+- Report any checks that could not be completed.
