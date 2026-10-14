@@ -2,6 +2,11 @@
 .idea/
 .vscode/
 
+# Node dependencies and build output
+node_modules/
+.next/
+dist/
+
 # Python virtual environments
 .venv/
 venv/
@@ -11,18 +16,24 @@ __pycache__/
 *.pyc
 *.pyo
 *.pyd
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
 
 # JWST downloaded data
 jwst_data/
 mastDownload/
 *.fits
 
-# Generated analysis data
-analysis_cache/
+# Generated analysis data outside the curated backend cache
+/analysis_cache/
 diagnostics/
 
 # Local data / exports
 *.csv
+*.log
+*.tmp
+*.bak
 
 # Images generated during diagnostics
 *.jpg
